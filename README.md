@@ -11,9 +11,9 @@ estimate the amount of time for each task by collecting data from the user. Our 
 ## Contributors
 
 **Anastasia Dunca**
-* I am a student at West High School who is an avid participant in robotics, science fair, and the tennis team
+* I am a junior at West High School who is an avid participant in robotics, science fair, and the tennis team
 * I love to program in `Java and Python` with some experience in `Golang, C++, HTML/CSS, and Kotlin`
-* In my free time, I love to play tennis, watch Netflix, code, call my friends, and drink Boba!
+* In my free time, I love to play tennis, watch Netflix, code, call my friends, and drink Boba with Daphne!!
 
 **Daphne Liu**
 * I am a senior at West High School. I'm most interested in Artificial Intelligence, and participate in Science Fair, Debate, and Tennis!
