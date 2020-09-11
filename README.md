@@ -23,7 +23,7 @@ estimate the amount of time a task requires by collecting data from the user ove
 
 **Fikir Teklemedhin**
 * I am a junior in high school. Some of my hobbies include coding and HOSA.
-* My primary experience lies in 'Java and Python' programming.
+* My primary experience lies in `Java and Python` programming.
 * When not coding, I enjoy exploring new places and reading a book.
 
 **Angela Layton**
