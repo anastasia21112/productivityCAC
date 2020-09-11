@@ -4,9 +4,10 @@
 
 ## Application Description
 
-We want to create an app that allows users to be productive by predicting how long it takes them to accomplish tasks based on user inputted data over a period of time.
-This would allow them to schedule their days properly with accurate estimated times to accomplish their tasks. We would use a neural network or machine learning algorithm that would
-estimate the amount of time for each task by collecting data from the user. Our goal to help users reach a new level of productivity so that they can realistically schedule their days.
+We want to create an app that allows users to predict how long certain tasks will take them to complete. This would allow the user to properly schedule their day with accurate time estimates for each desired task.
+
+We would use a neural network or machine learning algorithm that would
+estimate the amount of time a task requires by collecting data from the user over a period of time. Our goal to help users reach a new level of productivity by enabling them to realistically schedule their days.
 
 ## Contributors
 
