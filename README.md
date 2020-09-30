@@ -27,3 +27,6 @@ estimate the amount of time a task requires by collecting data from the user ove
 * When not coding, I enjoy exploring new places and reading a book.
 
 **Angela Layton**
+* I am a senior in high school. I play tennis and am part of an organization called SheTech!
+* My primary experience lies in `Java` programming.
+* In my free time, I like to watch Netflix and my favorite TV show right now is Umbrella Academy.
