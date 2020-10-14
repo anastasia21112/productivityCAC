@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashedLine"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/newTaskHeader"
+        android:layout_width="258dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="614dp"
+        android:text="Create a New Task"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="395dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:text="-----------------------------------------------------------------------------------------------------------------------------"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newTaskHeader" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="148dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="32dp"
+        android:text="Name of Task:"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Spinner
+        android:id="@+id/listOptions"
+        android:layout_width="270dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listText" />
+
+    <TextView
+        android:id="@+id/listText"
+        android:layout_width="123dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:text="Add to List"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeText" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="162dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="233dp"
+        android:layout_marginRight="233dp"
+        android:text="Estimated Time to Complete:"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+    <EditText
+        android:id="@+id/taskTimeInput"
+        android:layout_width="186dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/timeText"
+        app:layout_constraintTop_toBottomOf="@+id/taskNameInput" />
+
+    <Button
+        android:id="@+id/create"
+        android:layout_width="167dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="217dp"
+        android:layout_marginLeft="217dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:text="Create Task"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listOptions" />
+
+    <EditText
+        android:id="@+id/taskNameInput"
+        android:layout_width="183dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/nameText"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
