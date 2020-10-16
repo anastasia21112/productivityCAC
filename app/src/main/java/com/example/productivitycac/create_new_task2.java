@@ -27,6 +27,7 @@ public class create_new_task2 extends AppCompatActivity
 
         Spinner spinner = (Spinner) findViewById(R.id.listOptions);
         spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        //spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         List<String> categories = new ArrayList<String>();
         categories.add("List 1");
@@ -45,6 +46,6 @@ public class create_new_task2 extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.createnewtasklayout);
     }
 }

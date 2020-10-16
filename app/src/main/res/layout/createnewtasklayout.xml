@@ -5,7 +5,9 @@
     android:id="@+id/dashedLine"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/teal_purple_gradient">
+
 
     <TextView
         android:id="@+id/newTaskHeader"
@@ -19,6 +21,7 @@
         android:layout_marginBottom="614dp"
         android:text="Create a New Task"
         android:textSize="30sp"
+        app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +37,7 @@
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:text="-----------------------------------------------------------------------------------------------------------------------------"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newTaskHeader" />
@@ -47,6 +51,7 @@
         android:layout_marginTop="32dp"
         android:text="Name of Task:"
         android:textSize="22sp"
+        app:fontFamily="sans-serif-black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -75,6 +80,7 @@
         android:layout_marginRight="140dp"
         android:text="Add to List"
         android:textSize="22sp"
+        app:fontFamily="sans-serif-black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timeText" />
@@ -90,6 +96,7 @@
         android:layout_marginRight="233dp"
         android:text="Estimated Time to Complete:"
         android:textSize="22sp"
+        app:fontFamily="sans-serif-black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameText" />
@@ -120,6 +127,8 @@
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
         android:text="Create Task"
+        android:textColor="#090909"
+        android:textColorHighlight="#FFFFFF"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -137,6 +146,9 @@
         android:layout_marginRight="35dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:shadowColor="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/nameText"
