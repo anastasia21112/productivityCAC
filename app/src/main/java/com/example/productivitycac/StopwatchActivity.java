@@ -2,15 +2,12 @@ package com.example.productivitycac;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.widget.Chronometer;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class StopwatchActivity extends AppCompatActivity {
     private Chronometer chronometer;
     private long pauseOffset;
     private boolean running;
@@ -18,10 +15,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.stopwatch_activity_main);
 
         chronometer = findViewById(R.id.chronometer);
-
     }
 
     public void startChronometer(View v)
@@ -50,4 +46,19 @@ public class MainActivity extends AppCompatActivity {
         pauseOffset = 0;
     }
 
+    /*public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
+    {
+        super.onViewCreated(view, savedInstanceState);
+
+        view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+            }
+        }
+
+    }*/
 }
