@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/teal_purple_gradient"
+    android:orientation="vertical">>
+
+    <TextView
+        android:id="@+id/todolist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="To Do List"
+        android:textSize="36sp"
+        app:fontFamily="sans-serif-black" />
+
+    <CheckBox
+        android:id="@+id/task1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Task 1" />
+
+    <CheckBox
+        android:id="@+id/task2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Task 2" />
+
+    <CheckBox
+        android:id="@+id/task3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Task 3" />
+
+    <CheckBox
+        android:id="@+id/task4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Task 4" />
+
+    <CheckBox
+        android:id="@+id/task5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Task 5" />
+
+    <CheckBox
+        android:id="@+id/task6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Task 6" />
+
+    <CheckBox
+        android:id="@+id/task7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Task 7" />
+
+    <CheckBox
+        android:id="@+id/task8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Task 8" />
+
+    <CheckBox
+        android:id="@+id/task9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Task 9" />
+
+    <CheckBox
+        android:id="@+id/task10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Task 10" />
+
+    <Button
+        android:id="@+id/add_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Add a task" />
+</LinearLayout>
