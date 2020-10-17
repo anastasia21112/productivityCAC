@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:id="@+id/layout"
+    android:id="@+id/stopwatch_ayout"
     tools:context=".StopwatchActivity"
     android:background="@drawable/teal_purple_gradient">
 
@@ -37,6 +37,13 @@
         android:layout_height="wrap_content"
         android:text="Reset"
         android:onClick="resetChronometer"
+        android:textColor="#000080"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Activity"
+        android:onClick="nextActivity"
         android:textColor="#000080"
         />
 
