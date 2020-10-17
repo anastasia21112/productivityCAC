@@ -9,6 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/main_activity" >
+        </activity>
+
+
         <activity
             android:name=".LoginActivity"
             android:label="@string/login_activity"
@@ -18,18 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
 
             </intent-filter>
-        </activity>
 
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/main_activity" >
-
-
-        </activity>
-
-        <activity
-            android:name=".StopwatchActivity"
-            android:label="@string/stopwatch_activity">
         </activity>
 
     </application>
