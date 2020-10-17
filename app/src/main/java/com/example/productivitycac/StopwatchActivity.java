@@ -2,8 +2,10 @@ package com.example.productivitycac;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.view.View;
 
@@ -18,8 +20,14 @@ public class StopwatchActivity extends AppCompatActivity {
         setContentView(R.layout.stopwatch_activity_main);
 
         chronometer = findViewById(R.id.chronometer);
+
+
     }
 
+    public void nextActivity(View v)
+    {
+        setContentView(R.layout.createnewtask_activity);
+    }
     public void startChronometer(View v)
     {
         if(!running)
