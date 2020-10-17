@@ -8,6 +8,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 public class LoginActivity  extends AppCompatActivity {
 
@@ -31,6 +33,8 @@ public class LoginActivity  extends AppCompatActivity {
         b2 = (Button)findViewById(R.id.btn2);
         // tx1 = (TextView)findViewById(R.id.textView3);
         // tx1.setVisibility(View.GONE);
+
+        loginTutorial();
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +66,28 @@ public class LoginActivity  extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+
+    public void loginTutorial() {
+        ShowcaseConfig config = new ShowcaseConfig();
+        config.setDelay(500); // half second between each showcase view
+
+        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this, "SHOWCA_ID");
+
+        sequence.setConfig(config);
+
+//        sequence.addSequenceItem(ed1,
+//                "Enter a username", "GOT IT");
+//
+//        sequence.addSequenceItem(ed2,
+//                "Enter a password", "GOT IT");
+
+        sequence.addSequenceItem(b1,
+                "Press this to login", "GOT IT");
+        sequence.addSequenceItem(b2, "Press this to cancel your login information", "GOT IT");
+
+        sequence.start();
     }
 
 
