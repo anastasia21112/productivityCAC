@@ -39,6 +39,8 @@ public class LoginActivity  extends AppCompatActivity {
                         ed2.getText().toString().equals("admin")) {
                     Toast.makeText(getApplicationContext(),
                             "Redirecting...",Toast.LENGTH_SHORT).show();
+
+                        setContentView(R.layout.user_dashboard);
                 }else{
                     Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
 
@@ -62,13 +64,6 @@ public class LoginActivity  extends AppCompatActivity {
         });
     }
 
-    public void login(View view) {
-        if (ed1.getText().toString().equals("admin") && ed2.getText().toString().equals("admin")) {
 
-            //correcct password
-        } else {
-            //wrong password
-        }
-    }
 }
 
