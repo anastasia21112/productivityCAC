@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity  extends AppCompatActivity {
 
-    EditText username = (EditText) findViewById(R.id.editText1);
-    EditText password = (EditText) findViewById(R.id.editText2);
 
 
     Button b1,b2;
@@ -65,7 +63,7 @@ public class LoginActivity  extends AppCompatActivity {
     }
 
     public void login(View view) {
-        if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
+        if (ed1.getText().toString().equals("admin") && ed2.getText().toString().equals("admin")) {
 
             //correcct password
         } else {
