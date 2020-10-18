@@ -124,14 +124,14 @@
         app:fontFamily="cursive"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="194dp"
-        android:layout_height="194dp"
+        android:layout_width="199dp"
+        android:layout_height="187dp"
         android:layout_marginStart="99dp"
         android:layout_marginLeft="99dp"
         android:layout_marginTop="5dp"

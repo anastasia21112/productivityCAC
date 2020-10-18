@@ -19,27 +19,8 @@ public class CreateNewTaskActivity extends AppCompatActivity
 
     public void clickFunction(View v)
     {
-        EditText taskName = findViewById(R.id.taskNameInput);
-        EditText taskTime = findViewById(R.id.taskTimeInput);
 
-        Log.i("Task Name", taskName.toString());
-        Log.i("Task Time", taskTime.toString());
 
-        Spinner spinner = (Spinner) findViewById(R.id.listOptions);
-        spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
-        //spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        List<String> categories = new ArrayList<String>();
-        categories.add("List 1");
-        categories.add("List 2");
-        categories.add("List 3");
-        categories.add("List 4");
-        categories.add("List 5");
-        categories.add("New List");
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(dataAdapter);
     }
 
     @Override
@@ -47,5 +28,27 @@ public class CreateNewTaskActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.createnewtask_activity);
+
+        EditText taskName = findViewById(R.id.taskNameInput);
+        EditText taskTime = findViewById(R.id.taskTimeInput);
+
+        Log.i("Task Name", taskName.toString());
+        Log.i("Task Time", taskTime.toString());
+
+        Spinner spinner = (Spinner) findViewById(R.id.listOptions);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+
+        adapter.add("List 1");
+        adapter.add("List 2");
+        adapter.add("List 3");
+        adapter.add("List 4");
+        adapter.add("List 5");
+        adapter.add("New List");
+        
+        spinner.setAdapter(adapter);
     }
 }

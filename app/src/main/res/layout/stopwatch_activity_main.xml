@@ -39,13 +39,19 @@
         android:onClick="resetChronometer"
         android:textColor="#000080"
         />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next Activity"
         android:onClick="nextActivity"
-        android:textColor="#000080"
-        />
+        android:text="Select Task"
+        android:textColor="#000080" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
 </LinearLayout>
 
