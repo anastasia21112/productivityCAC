@@ -54,7 +54,7 @@ public class CreateNewTaskActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.createnewtask_activity);
 
-        b1 = (ImageButton) findViewById(R.id.createnewtask_backbutton);
+        b1 = (ImageButton) findViewById(R.id.imageButton3);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
