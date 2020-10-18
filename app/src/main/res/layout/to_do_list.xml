@@ -8,11 +8,13 @@
 
     <Button
         android:id="@+id/to_do_backbutton"
-        android:layout_width="62dp"
-        android:layout_height="wrap_content"
+        android:layout_width="63dp"
+        android:layout_height="33dp"
         android:layout_weight="1"
+        android:background="#FFFFFF"
         android:onClick="backToUserDashboard"
-        android:text="<<" />
+        android:text="Back"
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/todolist"
@@ -36,11 +38,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" />
+        android:gravity="center"
+        android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text=" Task name                                                         Time to complete"
+        android:textSize="14sp" />
 
     <TableLayout
         android:layout_width="393dp"
-        android:layout_height="505dp"
+        android:layout_height="437dp"
         android:layout_weight="1">
 
         <TableRow
@@ -240,14 +252,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="#FFFFFF"
         android:onClick="toCreateNewTask"
         android:text="Add a task" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/select_task_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="#FFFFFF"
         android:onClick="toTimer"
         android:text="Select a task to time" />
 

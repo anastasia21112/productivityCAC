@@ -17,32 +17,52 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
-        android:textSize="60dp" />
+        android:textSize="100dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="29dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:onClick="startChronometer"
         android:text="Start"
         android:textColor="#000080" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pause"
-        android:onClick="pauseChronometer"
-        android:textColor="#000080"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="11dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:onClick="pauseChronometer"
+        android:text="Pause"
+        android:textColor="#000080" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="11dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:onClick="resetChronometer"
         android:text="Reset"
         android:textColor="#000080" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="11dp" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:text="Save Time"
         android:textColor="#000080" />
 

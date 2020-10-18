@@ -32,9 +32,23 @@
             android:text="Anastasia's Lists"
             android:textSize="36sp" />
 
-        <Space
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="78dp" />
+            android:layout_height="63dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="377dp"
+                android:layout_height="78dp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="31dp"
+                android:layout_height="30dp"
+                android:background="#FFFFFF"
+                android:text="+" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/hw_button"
