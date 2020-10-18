@@ -17,12 +17,6 @@ import java.util.List;
 public class CreateNewTaskActivity extends AppCompatActivity
 {
 
-    public void clickFunction(View v)
-    {
-
-
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -34,6 +28,7 @@ public class CreateNewTaskActivity extends AppCompatActivity
 
         Log.i("Task Name", taskName.toString());
         Log.i("Task Time", taskTime.toString());
+
 
         Spinner spinner = (Spinner) findViewById(R.id.listOptions);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -48,7 +43,7 @@ public class CreateNewTaskActivity extends AppCompatActivity
         adapter.add("List 4");
         adapter.add("List 5");
         adapter.add("New List");
-        
+
         spinner.setAdapter(adapter);
     }
 }
