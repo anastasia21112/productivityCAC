@@ -33,6 +33,12 @@
 
             android:text="View to do lists" />
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create a To do list" />
+
     </LinearLayout>
 
     <LinearLayout
