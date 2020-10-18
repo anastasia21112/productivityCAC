@@ -21,13 +21,13 @@ public class StopwatchActivity extends AppCompatActivity {
 
         chronometer = findViewById(R.id.chronometer);
 
-        b1 = (ImageButton) findViewById(R.id.imageButton6);
+        /*b1 = (ImageButton) findViewById(R.id.imageButton6);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.user_dashboard);
             }
-        });
+        });*/
     }
 
     public void toUserDashboard(View v)

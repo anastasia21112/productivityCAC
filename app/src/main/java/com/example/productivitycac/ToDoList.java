@@ -7,27 +7,30 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ToDoList extends AppCompatActivity {
-        private ImageButton b1;
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.to_do_list);
 
-            b1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.to_do_list);
 
-                    setContentView(R.layout.createnewtask_activity);
-                }
-            });
+    }
 
-        }
+    public void sendMessage(View view) {
+        // Do something in response to button
+    }
 
-        public void sendMessage(View view) {
-            // Do something in response to button
-        }
-    public void toUserDashboard(View v)
+    public void backToUserDashboard(View v)
     {
         setContentView(R.layout.user_dashboard);
+    }
+
+    public void toCreateNewTask(View v)
+    {
+        setContentView(R.layout.createnewtask_activity);
+    }
+
+    public void toTimer(View v)
+    {
+        setContentView(R.layout.stopwatch_activity_main);
     }
 }

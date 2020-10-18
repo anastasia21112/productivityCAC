@@ -4,18 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/teal_purple_gradient"
-    android:orientation="vertical"><![CDATA[>
+    android:orientation="vertical">
 
-
-
-    ]]>
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="59dp"
+    <Button
+        android:id="@+id/to_do_backbutton"
+        android:layout_width="62dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+        android:onClick="backToUserDashboard"
+        android:text="<<" />
 
     <TextView
         android:id="@+id/todolist"
@@ -29,7 +26,7 @@
     <TextView
         android:id="@+id/textView16"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="29dp"
         android:layout_weight="1"
         android:text="Total Time To Complete List: " />
 
@@ -38,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" />
+        android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" />
 
     <TableLayout
         android:layout_width="393dp"
@@ -238,18 +235,19 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/todolist_backbutton"
+        android:id="@+id/add_task_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:onClick="toUserDashboard"
+        android:onClick="toCreateNewTask"
         android:text="Add a task" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/select_task_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:onClick="toTimer"
         android:text="Select a task to time" />
 
 
