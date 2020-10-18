@@ -26,26 +26,13 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <Button
-            android:id="@+id/addtaskbutton"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:onClick="toNewTask"
-            android:text="Add a new task" />
-
-        <Button
             android:id="@+id/viewlistbutton"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:onClick="toTodo"
 
-            android:text="View to do list" />
+            android:text="View to do lists" />
 
-        <Button
-            android:id="@+id/stopwatch_button"
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:onClick="toTimer"
-            android:text="Time a task" />
     </LinearLayout>
 
     <LinearLayout

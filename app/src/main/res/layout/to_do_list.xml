@@ -6,7 +6,16 @@
     android:background="@drawable/teal_purple_gradient"
     android:orientation="vertical"><![CDATA[>
 
+
+
     ]]>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/todolist"
@@ -221,6 +230,13 @@
         android:layout_weight="1"
         android:onClick="toUserDashboard"
         android:text="Add a task" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Select a task to time" />
 
 
 </LinearLayout>
