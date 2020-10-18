@@ -38,6 +38,13 @@
 
         </activity>
 
+        <activity
+            android:name=".UserDashboard"
+            android:label="user_dashboard"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
     </application>
 
 </manifest>
