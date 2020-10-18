@@ -1,18 +1,18 @@
 package com.example.productivitycac;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.widget.Button;
-import android.widget.Chronometer;
 import android.view.View;
+import android.widget.Chronometer;
+import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class StopwatchActivity extends AppCompatActivity {
     private Chronometer chronometer;
     private long pauseOffset;
     private boolean running;
+    private ImageButton b1;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -21,7 +21,13 @@ public class StopwatchActivity extends AppCompatActivity {
 
         chronometer = findViewById(R.id.chronometer);
 
-
+        b1 = (ImageButton) findViewById(R.id.stopwatch_backbutton);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.user_dashboard);
+            }
+        });
     }
 
     public void nextActivity(View v)

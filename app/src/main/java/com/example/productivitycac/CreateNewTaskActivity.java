@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import java.util.List;
 
 public class CreateNewTaskActivity extends AppCompatActivity
 {
+    private ImageButton b1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,5 +47,19 @@ public class CreateNewTaskActivity extends AppCompatActivity
         adapter.add("New List");
 
         spinner.setAdapter(adapter);
+     }
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.createnewtask_activity);
+
+        b1 = (ImageButton) findViewById(R.id.createnewtask_backbutton);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.user_dashboard);
+            }
+        });
     }
 }
