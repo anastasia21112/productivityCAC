@@ -21,7 +21,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class UserDashboard extends AppCompatActivity {
 
-    private Button b1,b2,b3;
+     Button b1,b2,b3;
+    public void b1OnClick() {
+        setContentView(R.layout.createnewtask_activity);
+    }
+
+    public void b2OnClick() {
+        setContentView(R.layout.to_do_list);
+    }
+
+    public void b3OnClick() {
+        setContentView(R.layout.stopwatch_activity_main);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -36,29 +48,34 @@ public class UserDashboard extends AppCompatActivity {
 
         b3 = (Button) findViewById(R.id.stopwatch_button);
 
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.createnewtask_activity);
-            }
-        });
+//        b1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.createnewtask_activity);
+//            }
+//        });
+//
+//        b2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.to_do_list);
+//            }
+//        });
+//
+//        b3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.stopwatch_activity_main);
+//            }
+//        });
 
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.to_do_list);
-            }
-        });
 
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.stopwatch_activity_main);
-            }
-        });
 
 
     }
+
+
+
 
 
 

@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/teal_purple_gradient"
-    tools:context=".MainActivity">
+    tools:context="com.example.productivitycac.UserDashboard"
+   >
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -28,18 +29,22 @@
             android:id="@+id/addtaskbutton"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:onClick="b1OnClick"
             android:text="Add a new task" />
 
         <Button
             android:id="@+id/viewlistbutton"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:onClick="b2OnClick"
+
             android:text="View to do list" />
 
         <Button
             android:id="@+id/stopwatch_button"
             android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:onClick="b3OnClick"
             android:text="Time a task" />
     </LinearLayout>
 

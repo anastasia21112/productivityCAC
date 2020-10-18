@@ -21,4 +21,6 @@
     <string name="main_activity">main_activity</string>
     <string name="stopwatch_activity">stopwatch_activity</string>
     <string name="login_activity">login_activity</string>
+    <string name="create_new_task_activity">create_new_task_activity</string>
+    <string name="user_dashboard_activity">user_dashboard_activity</string>
 </resources>

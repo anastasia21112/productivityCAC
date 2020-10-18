@@ -32,16 +32,18 @@
 
         <activity
             android:name=".CreateNewTaskActivity"
-            android:label="@string/login_activity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/create_new_task_activity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity">
 
 
         </activity>
 
         <activity
             android:name=".UserDashboard"
-            android:label="user_dashboard"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/user_dashboard_activity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity">
 
         </activity>
 
