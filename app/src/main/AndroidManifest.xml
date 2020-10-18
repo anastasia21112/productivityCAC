@@ -21,20 +21,26 @@
             android:label="@string/login_activity"
             android:theme="@style/AppTheme.NoActionBar">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER"/>
-
-            </intent-filter>
-
 
         </activity>
 
         <activity
             android:name=".CreateNewTaskActivity"
-            android:label="@string/login_activity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/create_new_task_activity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity">
 
+        </activity>
+
+        <activity
+            android:name=".UserDashboard"
+            android:label="@string/user_dashboard_activity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
 
         </activity>
 

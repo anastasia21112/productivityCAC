@@ -21,18 +21,18 @@ public class StopwatchActivity extends AppCompatActivity {
 
         chronometer = findViewById(R.id.chronometer);
 
-        b1 = (ImageButton) findViewById(R.id.stopwatch_backbutton);
+        /*b1 = (ImageButton) findViewById(R.id.imageButton6);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.user_dashboard);
             }
-        });
+        });*/
     }
 
-    public void nextActivity(View v)
+    public void toUserDashboard(View v)
     {
-        setContentView(R.layout.createnewtask_activity);
+        setContentView(R.layout.user_dashboard);
     }
     public void startChronometer(View v)
     {
@@ -60,19 +60,5 @@ public class StopwatchActivity extends AppCompatActivity {
         pauseOffset = 0;
     }
 
-    /*public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
-    {
-        super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-            }
-        }
-
-    }*/
 }

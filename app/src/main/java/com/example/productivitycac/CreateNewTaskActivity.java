@@ -1,15 +1,16 @@
 package com.example.productivitycac;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +34,9 @@ public class CreateNewTaskActivity extends AppCompatActivity
 
 
         Spinner spinner = (Spinner) findViewById(R.id.listOptions);
+
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
+        @SuppressLint("ResourceType") ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this,  android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -45,21 +47,19 @@ public class CreateNewTaskActivity extends AppCompatActivity
         adapter.add("List 4");
         adapter.add("List 5");
         adapter.add("New List");
-
         spinner.setAdapter(adapter);
-     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.createnewtask_activity);
 
-        b1 = (ImageButton) findViewById(R.id.createnewtask_backbutton);
-        b1.setOnClickListener(new View.OnClickListener() {
+
+        b1.setOnClickListener(new View.OnClickListener()
+    {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.user_dashboard);
             }
         });
+     }
+    public void toUserDashboard(View v)
+    {
+        setContentView(R.layout.user_dashboard);
     }
 }
