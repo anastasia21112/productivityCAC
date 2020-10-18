@@ -11,4 +11,11 @@
         android:label="login_activity"
         tools:layout="@layout/activity_login"/>
     <activity/>
+
+    <activity
+        android:id="@+id/UserDashboard"
+        android:name="com.example.productivitycac.UserDashboard"
+        android:label="user_dashboard"
+        tools:layout="@layout/user_dashboard"/>
+    <activity/>
 </navigation>
