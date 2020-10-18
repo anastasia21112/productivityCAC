@@ -1,21 +1,9 @@
 package com.example.productivitycac;
 
 
-import android.app.Activity;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
-
-import androidx.activity.OnBackPressedCallback;
-import androidx.appcompat.app.AlertDialog;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,12 +29,12 @@ public class UserDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_dashboard);
 
-        b1 = (Button) findViewById(R.id.addtaskbutton);
+        //b1 = (Button) findViewById(R.id.addtaskbutton);
 
-        b2 = (Button) findViewById(R.id.viewlistbutton);
+        //b2 = (Button) findViewById(R.id.viewlistbutton);
 
 
-        b3 = (Button) findViewById(R.id.stopwatch_button);
+        //b3 = (Button) findViewById(R.id.stopwatch_button);
 
 //        b1.setOnClickListener(new View.OnClickListener() {
 //            @Override
