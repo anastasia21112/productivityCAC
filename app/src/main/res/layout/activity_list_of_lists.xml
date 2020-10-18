@@ -38,7 +38,7 @@
             android:orientation="horizontal">
 
             <Space
-                android:layout_width="377dp"
+                android:layout_width="327dp"
                 android:layout_height="78dp" />
 
             <Button
