@@ -29,7 +29,7 @@
             android:id="@+id/view_list_button"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:onClick="toTaskList"
+            android:onClick="toListList"
             android:text="View to do lists" />
 
         <Button
@@ -60,7 +60,7 @@
             android:id="@+id/imageView2"
             android:layout_width="134dp"
             android:layout_height="129dp"
-            app:srcCompat="@drawable/true_time" />
+            app:srcCompat="@drawable/logo_part_transparent" />
 
         <LinearLayout
             android:layout_width="28dp"
@@ -81,14 +81,14 @@
                 android:id="@+id/textView"
                 android:layout_width="160dp"
                 android:layout_height="25dp"
-                android:text="Hello, username. "
+                android:text="Hello, Anastasia. "
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="8dp" />
 
             <TextView
                 android:id="@+id/textView3"

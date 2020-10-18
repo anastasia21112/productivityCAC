@@ -17,9 +17,9 @@ public class UserDashboard extends AppCompatActivity {
     }
 
 
-    public void toTaskList(View v)
+    public void toListList(View v)
     {
-        setContentView(R.layout.to_do_list);
+        setContentView(R.layout.activity_list_of_lists);
     }
 
 

@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Homework To Do List"
+
         android:textSize="40sp"
         app:fontFamily="sans-serif-black" />
 
