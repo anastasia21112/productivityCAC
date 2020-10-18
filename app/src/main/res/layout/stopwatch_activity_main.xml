@@ -32,18 +32,17 @@
         android:text="Pause"
         android:onClick="pauseChronometer"
         android:textColor="#000080"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset"
-        android:onClick="resetChronometer"
-        android:textColor="#000080"
-        />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="nextActivity"
+        android:onClick="resetChronometer"
+        android:text="Reset"
+        android:textColor="#000080" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Select Task"
         android:textColor="#000080" />
 
@@ -51,7 +50,6 @@
         android:id="@+id/imageButton6"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+        android:onClick="toUserDashboard"/>
 
 </LinearLayout>
-

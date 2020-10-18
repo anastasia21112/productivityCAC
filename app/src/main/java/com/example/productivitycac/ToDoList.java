@@ -2,13 +2,12 @@ package com.example.productivitycac;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ToDoList extends AppCompatActivity {
-        Button b1;
+        private ImageButton b1;
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -22,14 +21,13 @@ public class ToDoList extends AppCompatActivity {
                 }
             });
 
-
-
-
-
-
         }
 
         public void sendMessage(View view) {
             // Do something in response to button
         }
+    public void toUserDashboard(View v)
+    {
+        setContentView(R.layout.user_dashboard);
+    }
 }

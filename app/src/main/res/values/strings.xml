@@ -30,4 +30,7 @@
         <item>List3</item>
         <item>New List</item>
     </string-array>
+
+    <string name="create_new_task_activity">create_new_task_activity</string>
+    <string name="user_dashboard_activity">user_dashboard_activity</string>
 </resources>

@@ -4,9 +4,9 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,7 @@ import java.util.List;
 
 public class CreateNewTaskActivity extends AppCompatActivity
 {
+    private ImageButton b1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -48,22 +49,17 @@ public class CreateNewTaskActivity extends AppCompatActivity
         adapter.add("New List");
         spinner.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
+
+        b1.setOnClickListener(new View.OnClickListener()
+    {
             @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
-            {
-
+            public void onClick(View v) {
+                setContentView(R.layout.user_dashboard);
             }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView)
-            {
-                // your code here
-            }
-
         });
-
-
+     }
+    public void toUserDashboard(View v)
+    {
+        setContentView(R.layout.user_dashboard);
     }
 }

@@ -9,14 +9,7 @@
     android:background="@drawable/teal_purple_gradient">
 
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="70dp"
-        android:layout_height="47dp"
-        app:srcCompat="?attr/actionModeCloseDrawable"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="668dp"
-        tools:ignore="MissingConstraints" />
+
 
     <TextView
         android:id="@+id/newTaskHeader"
@@ -162,5 +155,17 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/nameText"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="138dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:onClick="toUserDashboard"
+        android:text="<<"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

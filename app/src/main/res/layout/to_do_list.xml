@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/teal_purple_gradient"
-    android:orientation="vertical">>
+    android:orientation="vertical"><![CDATA[>
+
+    ]]>
 
     <TextView
         android:id="@+id/todolist"
@@ -86,16 +88,12 @@
         android:text="Task 10" />
 
     <Button
-        android:id="@+id/add_task"
+        android:id="@+id/todolist_backbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:onClick="toUserDashboard"
         android:text="Add a task" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="62dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+
 </LinearLayout>
