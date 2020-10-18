@@ -15,7 +15,8 @@
         android:layout_height="47dp"
         app:srcCompat="?attr/actionModeCloseDrawable"
         tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="668dp" />
+        tools:layout_editor_absoluteY="668dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/newTaskHeader"
