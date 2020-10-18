@@ -60,7 +60,7 @@
             android:id="@+id/imageView2"
             android:layout_width="134dp"
             android:layout_height="129dp"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/true_Time" />
 
         <LinearLayout
             android:layout_width="28dp"
