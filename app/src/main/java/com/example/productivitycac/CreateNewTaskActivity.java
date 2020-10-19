@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.widget.TableRow;
 
 public class CreateNewTaskActivity extends AppCompatActivity
 {
@@ -27,34 +27,31 @@ public class CreateNewTaskActivity extends AppCompatActivity
         createButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-<<<<<<< HEAD
                 EditText taskName = findViewById(R.id.taskNameInput);
                 EditText taskTime = findViewById(R.id.taskTimeInput);
-=======
                 sendNewTask(view);
-                addNewTask(view);
+                goToToDoList1(view);
 
             }
         });
->>>>>>> fcc3d892c3d2ce81d5f26a4e9de777fac6fced8a
 
 
 
      }
 
-     public void createTask(View v) {
+     public void createTask(View v)
+     {
         Intent intent = new Intent(this, ToDoList.class);
         startActivity(intent);
      }
 
-<<<<<<< HEAD
-                TextView receiverTime_msg = (TextView) findViewById(R.id.task10Time);
-                Intent intentTime = getIntent();
-                String newTaskTime = intentTime.getStringExtra("taskTime");
-                receiverTime_msg.setText(newTaskTime);
-                
-=======
-     public void addNewTask(View v){
+    public void goToToDoList1(View v)
+    {
+        Intent intent = new Intent(this, ToDoList1.class);
+        startActivity(intent);
+    }
+
+    /*public void addNewTask(View v){
          TableRow layout = (TableRow) findViewById(R.id.tableRow10);
          //layout.setVisibility(v.INVISIBLE);
 
@@ -62,7 +59,7 @@ public class CreateNewTaskActivity extends AppCompatActivity
          Intent intentName = getIntent();
          String newTaskName = intentName.getStringExtra("taskName");
          receiverName_msg.setText(newTaskName);
->>>>>>> fcc3d892c3d2ce81d5f26a4e9de777fac6fced8a
+
 
          TextView receiverTime_msg = (TextView) findViewById(R.id.task10Time);
          Intent intentTime = getIntent();
@@ -70,7 +67,7 @@ public class CreateNewTaskActivity extends AppCompatActivity
          receiverTime_msg.setText(newTaskTime);
 
          //layout.setVisibility(v.VISIBLE);
-     }
+     }*/
 
      public void sendNewTask(View v){
          EditText taskName = findViewById(R.id.taskNameInput);

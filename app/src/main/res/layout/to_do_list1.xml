@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="29dp"
         android:layout_weight="1"
-        android:text="Total Time To Complete List: 184 minutes" />
+        android:text="Total Time To Complete List: 214 minutes" />
 
     <TextView
         android:id="@+id/textView15"
@@ -248,7 +248,31 @@
                 android:textSize="20sp" />
         </TableRow>
 
+        <TableRow
+            android:id="@+id/tableRow11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <CheckBox
+                android:id="@+id/task11"
+                android:layout_width="293dp"
+                android:layout_height="wrap_content"
+                android:text="Code App"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/task11Time"
+                android:layout_width="93dp"
+                android:layout_height="wrap_content"
+                android:text="30"
+                android:textSize="20sp" />
+        </TableRow>
+
     </TableLayout>
+
+
 
     <Button
         android:id="@+id/add_task_button"

@@ -27,6 +27,12 @@
 
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity
+            android:name=".ToDoList1"
+            android:label="to_do_list_activity1"
+
+            android:theme="@style/AppTheme.NoActionBar" />
+
 
         <activity
             android:name=".CreateNewTaskActivity"
