@@ -33,10 +33,5 @@ public class ToDoList extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void toTimer(View v)
-    {
 
-        Intent intent = new Intent(this, StopwatchActivity.class);
-        startActivity(intent);
-    }
 }
