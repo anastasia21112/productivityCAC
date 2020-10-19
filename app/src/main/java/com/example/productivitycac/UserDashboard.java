@@ -20,6 +20,7 @@ public class UserDashboard extends AppCompatActivity {
         getHelp = (Button) findViewById(R.id.button);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_dashboard);
+        userTutorial();
     }
 
 

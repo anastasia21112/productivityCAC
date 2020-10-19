@@ -34,6 +34,8 @@ public class list_of_lists extends AppCompatActivity {
             }
         });
 
+        listTutorial();
+
 
     }
 
