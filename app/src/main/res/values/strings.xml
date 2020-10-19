@@ -23,6 +23,9 @@
     <string name="login_activity">login_activity</string>
 
 
+    <string name="create_new_task_activity">create_new_task_activity</string>
+
+    <string name="user_dashboard_activity">user_dashboard_activity</string>
     <string-array name="spinner_items">
         <item>List1</item>
         <item>List2</item>
@@ -30,7 +33,4 @@
         <item>List3</item>
         <item>New List</item>
     </string-array>
-
-    <string name="create_new_task_activity">create_new_task_activity</string>
-    <string name="user_dashboard_activity">user_dashboard_activity</string>
 </resources>

@@ -7,7 +7,7 @@
 
     <activity
         android:id="@+id/LoginActivity"
-        android:name="com.example.productivitycac.LoginActivity"
+        android:name="com.example.productivitycac.MainActivity"
         android:label="login_activity"
         tools:layout="@layout/activity_login"/>
     <activity/>

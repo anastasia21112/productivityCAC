@@ -1,5 +1,6 @@
 package com.example.productivitycac;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -58,6 +59,12 @@ public class StopwatchActivity extends AppCompatActivity {
     {
         chronometer.setBase(SystemClock.elapsedRealtime());
         pauseOffset = 0;
+    }
+
+    public void toTask(View v)
+    {
+        Intent intent = new Intent(this, ToDoList.class);
+        startActivity(intent);
     }
 
 

@@ -38,8 +38,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
+        android:layout_marginBottom="32dp"
         android:text="-----------------------------------------------------------------------------------------------------------------------------"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/nameText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newTaskHeader" />
@@ -66,28 +68,30 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="233dp"
         android:layout_marginRight="233dp"
+        android:layout_marginBottom="347dp"
         android:text="Estimated Time to Complete in Minutes:"
         android:textSize="22sp"
         app:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
     <EditText
         android:id="@+id/taskTimeInput"
-        android:layout_width="186dp"
-        android:layout_height="37dp"
+        android:layout_width="184dp"
+        android:layout_height="55dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="96dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="104dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/create"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/timeText"
-        app:layout_constraintTop_toBottomOf="@+id/taskNameInput" />
+        app:layout_constraintStart_toEndOf="@+id/timeText" />
 
     <Button
         android:id="@+id/create"
@@ -97,14 +101,17 @@
         android:layout_marginLeft="217dp"
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
+        android:layout_marginBottom="189dp"
+        android:background="#FFFFFF"
+        android:onClick="createTask"
         android:text="Create Task"
         android:textColor="#090909"
         android:textColorHighlight="#FFFFFF"
         android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="546dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/taskNameInput"
@@ -115,11 +122,13 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
+        android:layout_marginBottom="96dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:shadowColor="#FFFFFF"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/taskTimeInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/nameText"
