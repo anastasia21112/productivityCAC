@@ -14,10 +14,15 @@ public class ToDoList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.to_do_list);
 
-        TextView receiver_msg = (TextView) findViewById(R.id.task10Time);
-        Intent intent = getIntent();
-        String newtaskTime = intent.getStringExtra("taskTime");
-        receiver_msg.setText(newtaskTime);
+        TextView receiverName_msg = (TextView) findViewById(R.id.task10);
+        Intent intentName = getIntent();
+        String newtaskName = intentName.getStringExtra("taskName");
+        receiverName_msg.setText(newtaskName);
+
+        TextView receiverTime_msg = (TextView) findViewById(R.id.task10Time);
+        Intent intentTime = getIntent();
+        String newtaskTime = intentTime.getStringExtra("taskTime");
+        receiverTime_msg.setText(newtaskTime);
     }
 
     public void sendMessage(View view) {
