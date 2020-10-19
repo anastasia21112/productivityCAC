@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(ed1.getText().toString().equals("admin") &&
+                if(ed1.getText().toString().equals("Anastasia") &&
                         ed2.getText().toString().equals("admin")) {
                     Toast.makeText(getApplicationContext(),
                             "Redirecting...",Toast.LENGTH_SHORT).show();
