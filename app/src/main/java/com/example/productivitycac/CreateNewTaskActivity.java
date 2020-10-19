@@ -36,8 +36,10 @@ public class CreateNewTaskActivity extends AppCompatActivity
                 nameIntent.putExtra("taskName", taskNameString);
                 startActivity(nameIntent);
 
-                //Log.i("Task Name", taskName.toString());
-                //Log.i("Task Time", taskTime.toString());
+                Intent timeIntent = new Intent(getApplicationContext(), ToDoList.class);
+                nameIntent.putExtra("taskTime", taskTimeString);
+                startActivity(nameIntent);
+
             }
         });
 
