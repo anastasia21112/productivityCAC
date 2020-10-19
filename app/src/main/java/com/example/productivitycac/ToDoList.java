@@ -16,8 +16,8 @@ public class ToDoList extends AppCompatActivity {
 
         TextView receiver_msg = (TextView) findViewById(R.id.task10Time);
         Intent intent = getIntent();
-        String newtaskName = intent.getStringExtra("taskName");
-        receiver_msg.setText(newtaskName);
+        String newtaskTime = intent.getStringExtra("taskTime");
+        receiver_msg.setText(newtaskTime);
     }
 
     public void sendMessage(View view) {
