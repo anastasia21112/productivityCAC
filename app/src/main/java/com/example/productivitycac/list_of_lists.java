@@ -19,6 +19,8 @@ public class list_of_lists extends AppCompatActivity {
         setContentView(R.layout.activity_list_of_lists);
 
         Button homeworkButton = (Button) findViewById(R.id.hw_button);
+        Button backButton = (Button) findViewById(R.id.button6);
+        listTutorial();
 
         homeworkButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,7 +28,7 @@ public class list_of_lists extends AppCompatActivity {
                 toHomeworkList(v);
             }
         });
-        Button backButton = (Button) findViewById(R.id.button6);
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +36,7 @@ public class list_of_lists extends AppCompatActivity {
             }
         });
 
-        listTutorial();
+
 
 
     }
