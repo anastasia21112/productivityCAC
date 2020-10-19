@@ -38,7 +38,7 @@ public class UserDashboard extends AppCompatActivity {
         ShowcaseConfig config = new ShowcaseConfig();
         config.setDelay(500); // half second between each showcase view
 
-        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this, "SHOW1_ID");
+        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this, "ID2");
 
         sequence.setConfig(config);
 
