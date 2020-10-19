@@ -16,10 +16,13 @@ public class UserDashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        viewList = (Button) findViewById(R.id.view_list_button);
-        getHelp = (Button) findViewById(R.id.button);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_dashboard);
+
+        viewList = (Button) findViewById(R.id.view_list_button);
+        getHelp = (Button) findViewById(R.id.button);
+
         userTutorial();
     }
 
