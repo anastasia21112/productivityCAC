@@ -9,23 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".list_of_lists"></activity>
+
         <activity
             android:name=".MainActivity"
-            android:label="@string/main_activity"></activity>
-        <activity
-            android:name=".LoginActivity"
             android:label="@string/login_activity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".CreateNewTaskActivity"
-            android:label="@string/create_new_task_activity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".UserDashboard"
-            android:label="@string/user_dashboard_activity"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +20,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ToDoList"
+            android:label="to_do_list_activity"
+
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity
+            android:name=".CreateNewTaskActivity"
+            android:label="@string/create_new_task_activity"
+
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UserDashboard"
+            android:label="@string/user_dashboard_activity"
+
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+
+        </activity>
+        <activity android:name=".list_of_lists" />
+
+        <activity android:name=".StopwatchActivity"/>
+
     </application>
 
 </manifest>

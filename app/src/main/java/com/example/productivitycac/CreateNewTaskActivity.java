@@ -1,5 +1,6 @@
 package com.example.productivitycac;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -40,17 +41,11 @@ public class CreateNewTaskActivity extends AppCompatActivity
             }
         });
 
-
-        b1.setOnClickListener(new View.OnClickListener()
-    {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.user_dashboard);
-            }
-        });
      }
-    public void toUserDashboard(View v)
-    {
-        setContentView(R.layout.user_dashboard);
-    }
+
+     public void createTask(View v) {
+        Intent intent = new Intent(this, ToDoList.class);
+        startActivity(intent);
+     }
+
 }

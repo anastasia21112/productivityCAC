@@ -65,6 +65,9 @@
             android:textColor="#FFFFFF"
             android:textSize="23sp" />
 
+
+
+
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
@@ -73,10 +76,6 @@
             android:text="Keep it up! "
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="29dp" />
 
         <Button
             android:id="@+id/view_list_button"
@@ -88,7 +87,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="29dp" />
 
         <Button
             android:id="@+id/button"
@@ -97,6 +96,13 @@
             android:background="#FFFFFF"
             android:text="Get help"
             android:textColor="#000000" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+
+
 
     </LinearLayout>
 

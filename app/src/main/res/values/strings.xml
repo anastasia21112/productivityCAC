@@ -24,5 +24,17 @@
 
 
     <string name="create_new_task_activity">create_new_task_activity</string>
+<<<<<<< HEAD
     <string name="user_dashboard_activity">user_dashboard_activity</string>
+=======
+
+    <string name="user_dashboard_activity">user_dashboard_activity</string>
+    <string-array name="spinner_items">
+        <item>List1</item>
+        <item>List2</item>
+        <item>List3</item>
+        <item>List3</item>
+        <item>New List</item>
+    </string-array>
+>>>>>>> 4d51d0bfa5d8f692e5397b41e2a311fd9eb9d110
 </resources>

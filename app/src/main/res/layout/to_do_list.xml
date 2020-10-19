@@ -12,7 +12,7 @@
         android:layout_height="33dp"
         android:layout_weight="1"
         android:background="#FFFFFF"
-        android:onClick="backToUserDashboard"
+        android:onClick="backToListOfLists"
         android:text="Back"
         android:textColor="#000000" />
 
@@ -255,6 +255,7 @@
         android:background="#FFFFFF"
         android:onClick="toCreateNewTask"
         android:text="Add a task" />
+
 
     <Space
         android:layout_width="match_parent"

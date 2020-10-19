@@ -103,6 +103,7 @@
         android:layout_marginRight="27dp"
         android:layout_marginBottom="189dp"
         android:background="#FFFFFF"
+        android:onClick="createTask"
         android:text="Create Task"
         android:textColor="#090909"
         android:textColorHighlight="#FFFFFF"
