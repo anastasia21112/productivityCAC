@@ -3,7 +3,7 @@ package com.example.productivitycac;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,10 @@ public class ToDoList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.to_do_list);
 
+        TextView receiver_msg = (TextView) findViewById(R.id.task10Time);
+        Intent intent = getIntent();
+        String newtaskName = intent.getStringExtra("taskName");
+        receiver_msg.setText(newtaskName);
     }
 
     public void sendMessage(View view) {
