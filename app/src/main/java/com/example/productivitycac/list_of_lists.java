@@ -20,7 +20,7 @@ public class list_of_lists extends AppCompatActivity {
 
         Button homeworkButton = (Button) findViewById(R.id.hw_button);
         Button backButton = (Button) findViewById(R.id.button6);
-        listTutorial();
+        //listTutorial();
 
         homeworkButton.setOnClickListener(new View.OnClickListener() {
             @Override
