@@ -79,19 +79,19 @@
 
     <EditText
         android:id="@+id/taskTimeInput"
-        android:layout_width="186dp"
-        android:layout_height="37dp"
+        android:layout_width="184dp"
+        android:layout_height="55dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="96dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="104dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/create"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/timeText"
-        app:layout_constraintTop_toBottomOf="@+id/taskNameInput" />
+        app:layout_constraintStart_toEndOf="@+id/timeText" />
 
     <Button
         android:id="@+id/create"
