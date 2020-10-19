@@ -16,22 +16,6 @@ public class ToDoList extends AppCompatActivity {
 
     }
 
-//    public void addNewListItem(View view)
-//    {
-//        TextView receiverName_msg = (TextView) findViewById(R.id.task10);
-//        Intent intentName = getIntent();
-//        String newTaskName = intentName.getStringExtra("taskName");
-//        receiverName_msg.setText(newTaskName);
-//
-//        TextView receiverTime_msg = (TextView) findViewById(R.id.task10Time);
-//        Intent intentTime = getIntent();
-//        String newTaskTime = intentTime.getStringExtra("taskTime");
-//        receiverTime_msg.setText(newTaskTime);
-//
-//        TableRow layout = (TableRow) findViewById(R.id.tableRow10);
-//        layout.setVisibility(View.VISIBLE);
-//    }
-
     public void sendMessage(View view) {
         // Do something in response to button
     }

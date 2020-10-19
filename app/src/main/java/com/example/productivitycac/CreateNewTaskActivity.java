@@ -26,6 +26,9 @@ public class CreateNewTaskActivity extends AppCompatActivity
         createButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
+                TableRow layout = (TableRow) findViewById(R.id.tableRow10);
+                layout.setVisibility(View.INVISIBLE);
+
                 EditText taskName = findViewById(R.id.taskNameInput);
                 EditText taskTime = findViewById(R.id.taskTimeInput);
 
@@ -50,7 +53,6 @@ public class CreateNewTaskActivity extends AppCompatActivity
                 String newTaskTime = intentTime.getStringExtra("taskTime");
                 receiverTime_msg.setText(newTaskTime);
 
-                TableRow layout = (TableRow) findViewById(R.id.tableRow10);
                 layout.setVisibility(View.VISIBLE);
 
             }
