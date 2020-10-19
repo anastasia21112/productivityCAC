@@ -63,7 +63,7 @@ public class StopwatchActivity extends AppCompatActivity {
 
     public void toTask(View v)
     {
-        Intent intent = new Intent(this, CreateNewTaskActivity.class);
+        Intent intent = new Intent(this, ToDoList.class);
         startActivity(intent);
     }
 

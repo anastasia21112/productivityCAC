@@ -7,12 +7,17 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 public class UserDashboard extends AppCompatActivity {
 
+    private Button viewList, getHelp;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        viewList = (Button) findViewById(R.id.view_list_button);
+        getHelp = (Button) findViewById(R.id.button);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_dashboard);
     }
@@ -22,6 +27,22 @@ public class UserDashboard extends AppCompatActivity {
     {
         Intent intent = new Intent(this, list_of_lists.class);
         startActivity(intent);
+    }
+
+    public void userTutorial()
+    {
+        ShowcaseConfig config = new ShowcaseConfig();
+        config.setDelay(500); // half second between each showcase view
+
+        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this, "SHOWCA_ID");
+
+        sequence.setConfig(config);
+
+        sequence.addSequenceItem(viewList,
+                "View your to-do lists here", "GOT IT");
+        sequence.addSequenceItem(getHelp, "View extended tutorials here", "GOT IT");
+
+        sequence.start();
     }
 
 
