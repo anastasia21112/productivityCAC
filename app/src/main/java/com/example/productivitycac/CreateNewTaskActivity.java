@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,9 +24,6 @@ public class CreateNewTaskActivity extends AppCompatActivity
         createButton = (Button)findViewById(R.id.create);
         createButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
-                TableRow layout = (TableRow) findViewById(R.id.tableRow10);
-                layout.setVisibility(View.INVISIBLE);
 
                 EditText taskName = findViewById(R.id.taskNameInput);
                 EditText taskTime = findViewById(R.id.taskTimeInput);
@@ -52,8 +48,7 @@ public class CreateNewTaskActivity extends AppCompatActivity
                 Intent intentTime = getIntent();
                 String newTaskTime = intentTime.getStringExtra("taskTime");
                 receiverTime_msg.setText(newTaskTime);
-
-                layout.setVisibility(View.VISIBLE);
+                
 
             }
         });
