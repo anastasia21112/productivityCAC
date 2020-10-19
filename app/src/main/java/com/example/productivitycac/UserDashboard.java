@@ -1,6 +1,7 @@
 package com.example.productivitycac;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,8 +20,10 @@ public class UserDashboard extends AppCompatActivity {
 
     public void toListList(View v)
     {
-        setContentView(R.layout.activity_list_of_lists);
+        Intent intent = new Intent(this, list_of_lists.class);
+        startActivity(intent);
     }
+
 
 
 //    @Override

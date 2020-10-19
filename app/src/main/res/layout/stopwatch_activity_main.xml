@@ -63,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
+        android:onClick="toTask"
         android:text="Save Time"
         android:textColor="#000080" />
 

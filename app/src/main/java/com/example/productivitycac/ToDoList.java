@@ -1,5 +1,6 @@
 package com.example.productivitycac;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -19,18 +20,23 @@ public class ToDoList extends AppCompatActivity {
         // Do something in response to button
     }
 
-    public void backToUserDashboard(View v)
+    public void backToListOfLists(View v)
     {
-        setContentView(R.layout.user_dashboard);
+        Intent intent = new Intent(this, list_of_lists.class);
+        startActivity(intent);
     }
 
     public void toCreateNewTask(View v)
     {
-        setContentView(R.layout.createnewtask_activity);
+
+        Intent intent = new Intent(this, CreateNewTaskActivity.class);
+        startActivity(intent);
     }
 
     public void toTimer(View v)
     {
-        setContentView(R.layout.stopwatch_activity_main);
+
+        Intent intent = new Intent(this, StopwatchActivity.class);
+        startActivity(intent);
     }
 }
