@@ -61,11 +61,6 @@ public class StopwatchActivity extends AppCompatActivity {
         pauseOffset = 0;
     }
 
-    public void toTask(View v)
-    {
-        Intent intent = new Intent(this, ToDoList2.class);
-        startActivity(intent);
-    }
 
 
 }
