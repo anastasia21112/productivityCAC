@@ -30,8 +30,6 @@ public class CreateNewTaskActivity extends AppCompatActivity
                 EditText taskName = findViewById(R.id.taskNameInput);
                 EditText taskTime = findViewById(R.id.taskTimeInput);
                 sendNewTask(view);
-                goToToDoList1(view);
-
             }
         });
 
@@ -45,11 +43,6 @@ public class CreateNewTaskActivity extends AppCompatActivity
         startActivity(intent);
      }
 
-    public void goToToDoList1(View v)
-    {
-        Intent intent = new Intent(this, ToDoList1.class);
-        startActivity(intent);
-    }
 
     /*public void addNewTask(View v){
          TableRow layout = (TableRow) findViewById(R.id.tableRow10);
