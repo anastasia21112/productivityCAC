@@ -80,11 +80,6 @@ public class ListManager {
             jsonString = new String(buffer, "UTF-8");
             Log.i("List Manager", "LM: " + jsonString);
 
-            JSONObject obj = new JSONObject(jsonString);
-            String task1 = obj.getJSONObject("listName").getString("task1");
-            Log.i("List Manager", "LM: TASK1: " + task1);
-
-
             /*
             Object obj = new JSONParser().parse(new FileReader(new File("listManager.json")));
 
@@ -104,17 +99,23 @@ public class ListManager {
         } catch (IOException e)
         {
             Log.i("List Manager", "LM: IO Exception");
-        } catch (JSONException e) {
-            Log.i("List Manager", "LM: JSON Exception");
         }
         return jsonString;
     }
 
-    public void parseJSON()
-    {
-        /*Gson gson = new Gson();
-        Type listUserType = new TypeToken<List<User>>() { }.getType();
-         */
+    public void parseJSON(String jsonString) {
+        try
+        {
+            JSONObject obj = new JSONObject(jsonString);
+            String task1 = obj.getJSONObject("listName").getString("task1");
+            Log.i("List Manager", "LM: TASK1: " + task1);
+        }
+
+        catch (JSONException e)
+        {
+            Log.i("List Manager", "LM: JSON Exception");
+        }
+
     }
     public void addTaskToList(String task, double duration, String listName)
     {

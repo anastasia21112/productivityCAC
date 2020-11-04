@@ -49,8 +49,8 @@ public class CreateNewTaskActivity extends AppCompatActivity {
             org.json.JSONObject obj = new JSONObject(jsonString);
             String task1 = obj.getJSONObject("listName").getString("task1");
             Log.i("List Manager", "LM: TASK1: " + task1);
-
-
+            String task1Details = obj.getJSONObject("listName").getJSONObject("task1").getString("taskName");
+            Log.i("List Manager", "LM: TASK1NAME: " + task1Details);
             /*
             Object obj = new JSONParser().parse(new FileReader(new File("listManager.json")));
 
