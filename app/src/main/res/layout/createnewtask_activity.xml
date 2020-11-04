@@ -88,13 +88,13 @@
         android:layout_marginBottom="104dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/create"
+        app:layout_constraintBottom_toTopOf="@+id/createTaskButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/timeText" />
 
     <Button
-        android:id="@+id/create"
+        android:id="@+id/createTaskButton"
         android:layout_width="167dp"
         android:layout_height="77dp"
         android:layout_marginStart="217dp"
@@ -103,7 +103,7 @@
         android:layout_marginRight="27dp"
         android:layout_marginBottom="189dp"
         android:background="#FFFFFF"
-        android:onClick="goToToDoList1"
+        android:onClick="goToToDoList"
         android:text="Create Task"
         android:textColor="#090909"
         android:textColorHighlight="#FFFFFF"

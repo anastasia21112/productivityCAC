@@ -7,41 +7,78 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TableRow;
 
-public class CreateNewTaskActivity extends AppCompatActivity
-{
-    private Button createButton,b1;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+
+import java.io.*;
+
+public class CreateNewTaskActivity extends AppCompatActivity {
+    private Button createButton, b1;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
+        new ListManager();
+        Log.i("TODO", "NEW TASK CREATED");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.createnewtask_activity);
 
 
-        createButton = (Button)findViewById(R.id.create);
-        createButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
+        createButton = (Button) findViewById(R.id.createTaskButton);
 
-                EditText taskName = findViewById(R.id.taskNameInput);
-                EditText taskTime = findViewById(R.id.taskTimeInput);
-                sendNewTask(view);
-            }
-        });
+        String jsonString = "";
+        try
+        {
+            InputStream is = this.getApplicationContext().getAssets().open("listManager.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            jsonString = new String(buffer, "UTF-8");
+            Log.i("List Manager", "LM: " + jsonString);
+
+            org.json.JSONObject obj = new JSONObject(jsonString);
+            String task1 = obj.getJSONObject("listName").getString("task1");
+            Log.i("List Manager", "LM: TASK1: " + task1);
 
 
+            /*
+            Object obj = new JSONParser().parse(new FileReader(new File("listManager.json")));
 
-     }
+            JSONObject jo = (JSONObject) obj;
 
-     public void createTask(View v)
-     {
+            // getting firstName and lastName
+            String list = (String) jo.get("listName");
+            Log.i("List Manager", list);
+
+             */
+
+        }
+
+        catch(FileNotFoundException e)
+        {
+            Log.i("List Manager", "LM: UNABLE TO FIND FILE");
+        } catch (IOException e)
+        {
+            Log.i("List Manager", "LM: IO Exception");
+        } catch (JSONException e) {
+            Log.i("List Manager", "LM: JSON Exception");
+        }
+    }
+
+    public void createTask(View v) {
         Intent intent = new Intent(this, ToDoList.class);
         startActivity(intent);
-     }
+    }
 
 
     /*public void addNewTask(View v){
@@ -62,19 +99,34 @@ public class CreateNewTaskActivity extends AppCompatActivity
          //layout.setVisibility(v.VISIBLE);
      }*/
 
-     public void sendNewTask(View v){
-         EditText taskName = findViewById(R.id.taskNameInput);
-         EditText taskTime = findViewById(R.id.taskTimeInput);
+    public void goToToDoList(View v) {
+        Log.i("TODO", "TRIED TO GO TO TO DO LIST");
+        EditText taskName = findViewById(R.id.taskNameInput);
+        EditText taskTime = findViewById(R.id.taskTimeInput);
 
-         String taskNameString = taskName.getText().toString();
-         String taskTimeString = taskTime.getText().toString();
+        String taskNameStr = taskName.getText().toString();
+        String taskTimeString = taskTime.getText().toString();
 
-         Intent nameIntent = new Intent(this, ToDoList.class);
-         nameIntent.putExtra("taskName", taskNameString);
-         startActivity(nameIntent);
+        ToDoList list = new ToDoList();
+        Intent intent = new Intent(this, ToDoList.class);
+        startActivity(intent);
 
-         Intent timeIntent = new Intent(this, ToDoList.class);
-         timeIntent.putExtra("taskTime", taskTimeString);
-         startActivity(timeIntent);
-     }
+        list.addRow(taskNameStr);
+    }
+
+    public void sendNewTask(View v) {
+        EditText taskName = findViewById(R.id.taskNameInput);
+        EditText taskTime = findViewById(R.id.taskTimeInput);
+
+        String taskNameString = taskName.getText().toString();
+        String taskTimeString = taskTime.getText().toString();
+
+        Intent nameIntent = new Intent(this, ToDoList.class);
+        nameIntent.putExtra("taskName", taskNameString);
+        startActivity(nameIntent);
+
+        Intent timeIntent = new Intent(this, ToDoList.class);
+        timeIntent.putExtra("taskTime", taskTimeString);
+        startActivity(timeIntent);
+    }
 }
