@@ -24,8 +24,10 @@ import java.util.Scanner;
 
 
 public class ListManager {
-    //CURRENTLY CANNOT FIND FILE
-    public static Map listManager = new HashMap<ArrayList<ArrayList<Object>>, String>();
+
+    //TODO: figure out how to parse information to list
+    public static Map listManager = new HashMap<String, ArrayList<Object>>();
+    public static Map allTasks = new HashMap<String, ArrayList<Double>>();
     public ListManager()
     {
 
@@ -33,8 +35,15 @@ public class ListManager {
 
     }
     /*
-        listManager{ArrayList<E> list};
-            ArrayList<E>{[task, duration], [task, duration]};
+        Structure:
+        listManager:
+            <String>: get list by it's name (string)
+            <ArrayList<Object>: each list of tasks
+                each list of tasks: {[task, duration], [task, duration]};
+                    duration: once done, add task name and duration to 'all tasks' map
+                               makes it so any task can be in any list and still get averaged for time
+        allTasks: stores name and duration[] for all tasks as a record for averaging times
+
      */
 
     /*

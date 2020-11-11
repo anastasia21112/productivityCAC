@@ -1,18 +1,47 @@
 {
-  "listName":
-  {
-    "task1":
-    {
-      "taskName": "study for CS",
-      "taskDuration": ""
-    },
-    "listName":
-    {
-      "task1":
+  "lists":
+  [
+
       {
-        "taskName": "",
-        "taskDuration": ""
+        "listName": "",
+        "tasks":
+        [
+          {
+            "taskName": "study for CS",
+            "taskDuration": ""
+          },
+          {
+            "taskName": "study for math",
+            "taskDuration": ""
+          },
+          {
+            "taskName": "study for physics",
+            "taskDuration": ""
+          }
+        ]
+
+      },
+
+      {
+        "listName2": "",
+        "tasks":
+        [
+          {
+            "taskName": "study for LA",
+            "taskDuration": ""
+          },
+          {
+            "taskName": "study for history",
+            "taskDuration": ""
+          },
+          {
+            "taskName": "study for psych",
+            "taskDuration": ""
+          }
+        ]
+
       }
-    }
-  }
+
+  ]
+
 }

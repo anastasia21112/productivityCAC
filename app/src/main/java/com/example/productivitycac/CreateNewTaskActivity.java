@@ -14,11 +14,16 @@ import android.widget.TableRow;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
+import com.google.gson.*;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CreateNewTaskActivity extends AppCompatActivity {
     private Button createButton, b1;
@@ -46,21 +51,46 @@ public class CreateNewTaskActivity extends AppCompatActivity {
             jsonString = new String(buffer, "UTF-8");
             Log.i("List Manager", "LM: " + jsonString);
 
-            org.json.JSONObject obj = new JSONObject(jsonString);
-            String task1 = obj.getJSONObject("listName").getString("task1");
-            Log.i("List Manager", "LM: TASK1: " + task1);
-            String task1Details = obj.getJSONObject("listName").getJSONObject("task1").getString("taskName");
-            Log.i("List Manager", "LM: TASK1NAME: " + task1Details);
-            /*
-            Object obj = new JSONParser().parse(new FileReader(new File("listManager.json")));
+            JSONObject obj = new JSONObject(jsonString);
+//
+//            String task1 = obj.getJSONObject("listName").getString("task1");
+//            Log.i("List Manager", "LM: TASK1: " + task1);
+//
+//            String task1Details = obj.getJSONObject("listName").getJSONObject("task1").getString("taskName");
+//            Log.i("List Manager", "LM: TASK1NAME: " + task1Details);
 
-            JSONObject jo = (JSONObject) obj;
+            Map listManager = new HashMap<String, ArrayList<Object>>();
 
-            // getting firstName and lastName
-            String list = (String) jo.get("listName");
-            Log.i("List Manager", list);
+            JSONArray taskListArray = obj.getJSONArray("lists");
+            for (int i = 0; i < taskListArray.length(); i++)
+            {
+                JSONObject listObj =  (JSONObject) taskListArray.get(i);
+                JSONArray jsonTasks = listObj.getJSONArray("tasks");
 
-             */
+
+                ArrayList<Object> tasks = new ArrayList<Object>();
+
+                for(int j = 0; j < jsonTasks.length(); j++)
+                {
+                    HashMap<String, Double> map = new HashMap<String, Double>();
+                    Log.i("List Manager", "names: " + jsonTasks.getJSONObject(j).get("taskName"));
+
+                }
+//
+//                Log.i("List Manager", "List name " + listName);
+                 Log.i("List Manager", "List tasks: " + jsonTasks);
+                //JSONArray listTasks = listObj.getJSONArray();
+
+                /*String tasks[] = new String[listTasks.length()];
+                String durations[] = new String[listTasks.length()];
+                for(int j = 0; j < listTasks.length(); j++)
+                {
+                    tasks[i] = listTasks.getJSONObject(i).getJSONObject("taskName") + "";
+                    durations[i] = listTasks.getJSONObject(i).getJSONObject("taskDuration") + "";
+                }
+                Log.i("List Manager", "JSON PARSER: " + listName + "\n\ttasks: " + tasks + "\n\tdurations: " + durations);
+                */
+            }
 
         }
 
@@ -71,7 +101,7 @@ public class CreateNewTaskActivity extends AppCompatActivity {
         {
             Log.i("List Manager", "LM: IO Exception");
         } catch (JSONException e) {
-            Log.i("List Manager", "LM: JSON Exception");
+            Log.i("List Manager", "LM: JSON Exception" + e.getMessage());
         }
     }
 
