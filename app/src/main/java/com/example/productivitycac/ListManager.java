@@ -29,11 +29,12 @@ public class ListManager {
     //TODO: figure out how to parse information to list
     public static Map listManager = new HashMap<String, ArrayList<Object>>();
     public static Map allTasks = new HashMap<String, ArrayList<Double>>();
-    public ListManager()
+    public ListManager(Context context, String fileName)
     {
 
         // typecasting obj to JSONObject
-
+        this.listManager = this.parseListManager(this.getJSON(context, fileName));
+        this.allTasks = this.parseAllTasks(this.getJSON(context, fileName));
     }
     /*
         Structure:
@@ -102,7 +103,7 @@ public class ListManager {
         return jsonString;
     }
 
-    public void parseJSON(String jsonString)
+    public Map parseListManager(String jsonString)
     {
 
         try
@@ -118,7 +119,6 @@ public class ListManager {
                 JSONObject listObj =  (JSONObject) taskListArray.get(i);
                 JSONArray jsonTasks = listObj.getJSONArray("tasks");
 
-                Log.i("List Manager", "listName: " + listObj.get("listName"));
                 ArrayList<Object> tasks = new ArrayList<Object>();
 
 
@@ -131,16 +131,21 @@ public class ListManager {
                     task.add(jsonTask.get("taskDuration"));
 
                     tasks.add(task);
-
                 }
-                Log.i("List Manager", "Tasks in : " + listObj.get("listName") + ": " + tasks);
+                listManager.put(listObj.get("listName"), tasks);
 
             }
+            return listManager;
         }
         catch (JSONException e)
         {
             Log.i("List Manager", "LM: JSON Exception" + e.getMessage());
         }
+        return null;
+    }
+    public Map parseAllTasks(String jsonString)
+    {
+        return null;
     }
     public void addTaskToList(String task, double duration, String listName)
     {

@@ -32,7 +32,7 @@ public class CreateNewTaskActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        new ListManager();
+        new ListManager(this.getApplicationContext(), "listManager.json");
         Log.i("TODO", "NEW TASK CREATED");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.createnewtask_activity);
@@ -43,14 +43,13 @@ public class CreateNewTaskActivity extends AppCompatActivity {
         String jsonString = "";
         try
         {
-            InputStream is = this.getApplicationContext().getAssets().open("listManager.json");
+            InputStream is = this.getApplicationContext().getAssets().open("allTasks.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
             is.close();
 
             jsonString = new String(buffer, "UTF-8");
-            Log.i("List Manager", "LM: " + jsonString);
 
             JSONObject obj = new JSONObject(jsonString);
 //
@@ -60,34 +59,31 @@ public class CreateNewTaskActivity extends AppCompatActivity {
 //            String task1Details = obj.getJSONObject("listName").getJSONObject("task1").getString("taskName");
 //            Log.i("List Manager", "LM: TASK1NAME: " + task1Details);
 
-            Map listManager = new HashMap<String, ArrayList<Object>>();
+            Map allTasks = new HashMap<String, ArrayList<Double>>();
 
 
-            JSONArray taskListArray = obj.getJSONArray("lists");
+            JSONArray taskListArray = obj.getJSONArray("tasks");
 
             for (int i = 0; i < taskListArray.length(); i++)
             {
                 JSONObject listObj =  (JSONObject) taskListArray.get(i);
-                JSONArray jsonTasks = listObj.getJSONArray("tasks");
+                JSONArray jsonDurations = listObj.getJSONArray("taskDuration");
 
-                Log.i("List Manager", "listName: " + listObj.get("listName"));
-                ArrayList<Object> tasks = new ArrayList<Object>();
+                Log.i("List Manager", "listName: " + listObj.get("taskName"));
+                ArrayList<Object> durations = new ArrayList<Object>();
 
 
-                for(int j = 0; j < jsonTasks.length(); j++)
+                for(int j = 0; j < jsonDurations.length(); j++)
                 {
-                    ArrayList<Object> task = new ArrayList<Object>();
-
-                    JSONObject jsonTask = (JSONObject) jsonTasks.get(j);
-                    task.add(jsonTask.get("taskName"));
-                    task.add(jsonTask.get("taskDuration"));
-
-                    tasks.add(task);
-
+                    Integer jsonTask =  (Integer)jsonDurations.get(j);
+                    durations.add(jsonTask.doubleValue());
                 }
-                Log.i("List Manager", "Tasks in : " + listObj.get("listName") + ": " + tasks);
+
+                allTasks.put(listObj.get("taskName"), durations);
+                Log.i("List Manager", "Durations in : " + listObj.get("taskName") + ": " + durations);
 
             }
+            Log.i("List Manager", "entire all tasks : " + allTasks);
 
 
         }
