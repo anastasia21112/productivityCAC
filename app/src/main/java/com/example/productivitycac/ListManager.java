@@ -77,6 +77,7 @@ public class ListManager {
 
         json node calls list manager
      */
+
     public String getJSON(Context context, String fileName)
     {
         String jsonString = "";
@@ -89,7 +90,7 @@ public class ListManager {
             is.close();
 
             jsonString = new String(buffer, "UTF-8");
-            Log.i("List Manager", "LM: " + jsonString);
+
 
         }
 
