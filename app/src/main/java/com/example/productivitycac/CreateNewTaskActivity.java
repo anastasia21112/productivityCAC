@@ -80,10 +80,29 @@ public class CreateNewTaskActivity extends AppCompatActivity {
                 }
 
                 allTasks.put(listObj.get("taskName"), durations);
-                Log.i("List Manager", "Durations in : " + listObj.get("taskName") + ": " + durations);
+            }
+
+            Map allLists = ListManager.listManager;
+
+            Iterator iterator = allLists.entrySet().iterator();
+            while(iterator.hasNext())
+            {
+                Map.Entry list = (Map.Entry)iterator.next();
+                Log.i("List Manager", "current list : " + list);
+
+                String listName = (String) list.getKey();
+                ArrayList<Object> listTasks = (ArrayList<Object>) list.getValue();
+
+                for(int i = 0; i < listTasks.size(); i++)
+                {
+                    ArrayList<Object> task =  (ArrayList<Object>) listTasks.get(i);
+                    String taskName = (String) task.get(0);
+                    Double taskDuration = Double.parseDouble(task.get(1).toString());
+
+                    Log.i("List Manager", "current task name and duration : " + taskName + ", " + taskDuration);
+                }
 
             }
-            Log.i("List Manager", "entire all tasks : " + allTasks);
 
 
         }
