@@ -3,28 +3,24 @@ package com.example.productivitycac;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.widget.TableRow;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONArray;
-import com.google.gson.*;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Iterator;
+import java.util.Map;
 
 public class CreateNewTaskActivity extends AppCompatActivity {
     private Button createButton, b1;
@@ -154,7 +150,7 @@ public class CreateNewTaskActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ToDoList.class);
         startActivity(intent);
 
-        list.addRow(taskNameStr);
+        //list.addRow(taskNameStr);
     }
 
     public void sendNewTask(View v) {

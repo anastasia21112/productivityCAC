@@ -5,14 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.widget.TableRow;
-import android.widget.Button;
 
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Iterator;
+import java.util.Map;
 public class ToDoList extends AppCompatActivity {
 
     //TODO: try to get todo list to save to a global arraylist: https://stackoverflow.com/questions/36069886/how-to-create-an-arraylist-that-is-accessible-by-different-classes-in-android
@@ -23,21 +23,23 @@ public class ToDoList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.to_do_list);
         tableLayout = (TableLayout) findViewById(R.id.table);
-
+        extractData();
     }
 
-    public void addRow(String text)
+    public void addRow(String name, Double time, int rowNum)
     {
-        //tableLayout = new TableLayout(this.getApplicationContext());
-
-
         TableRow row = new TableRow(this.getApplicationContext());
 
-        tableLayout.addView(row);
-        Button button = new Button(this);
-        button.setText(text);
+        CheckBox checkBox = new CheckBox(this);
+        checkBox.setText(name);
 
-        row.addView(button);
+        TextView taskTime = new TextView(this);
+        String timeString = time + "";
+        taskTime.setText(timeString);
+
+        row.addView(checkBox);
+        row.addView(taskTime);
+        tableLayout.addView(row);
     }
     public void sendMessage(View view) {
         // Do something in response to button
@@ -79,9 +81,11 @@ public class ToDoList extends AppCompatActivity {
                 ArrayList<Object> task =  (ArrayList<Object>) listTasks.get(i);
                 String taskName = (String) task.get(0);
                 Double taskDuration = (Double) task.get(1);
+                addRow(taskName, taskDuration, i);
             }
 
         }
     }
+
 
 }
