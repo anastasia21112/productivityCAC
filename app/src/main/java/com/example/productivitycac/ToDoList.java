@@ -40,6 +40,7 @@ public class ToDoList extends AppCompatActivity {
         row.addView(checkBox);
         row.addView(taskTime);
         tableLayout.addView(row);
+        tableLayout.setVisibility(View.VISIBLE);
     }
     public void sendMessage(View view) {
         // Do something in response to button
