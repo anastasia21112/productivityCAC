@@ -24,6 +24,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Iterator;
 
 public class CreateNewTaskActivity extends AppCompatActivity {
     private Button createButton, b1;
@@ -61,36 +62,33 @@ public class CreateNewTaskActivity extends AppCompatActivity {
 
             Map listManager = new HashMap<String, ArrayList<Object>>();
 
+
             JSONArray taskListArray = obj.getJSONArray("lists");
+
             for (int i = 0; i < taskListArray.length(); i++)
             {
                 JSONObject listObj =  (JSONObject) taskListArray.get(i);
                 JSONArray jsonTasks = listObj.getJSONArray("tasks");
 
-
+                Log.i("List Manager", "listName: " + listObj.get("listName"));
                 ArrayList<Object> tasks = new ArrayList<Object>();
+
 
                 for(int j = 0; j < jsonTasks.length(); j++)
                 {
-                    HashMap<String, Double> map = new HashMap<String, Double>();
-                    Log.i("List Manager", "names: " + jsonTasks.getJSONObject(j).get("taskName"));
+                    ArrayList<Object> task = new ArrayList<Object>();
+
+                    JSONObject jsonTask = (JSONObject) jsonTasks.get(j);
+                    task.add(jsonTask.get("taskName"));
+                    task.add(jsonTask.get("taskDuration"));
+
+                    tasks.add(task);
 
                 }
-//
-//                Log.i("List Manager", "List name " + listName);
-                 Log.i("List Manager", "List tasks: " + jsonTasks);
-                //JSONArray listTasks = listObj.getJSONArray();
+                Log.i("List Manager", "Tasks in : " + listObj.get("listName") + ": " + tasks);
 
-                /*String tasks[] = new String[listTasks.length()];
-                String durations[] = new String[listTasks.length()];
-                for(int j = 0; j < listTasks.length(); j++)
-                {
-                    tasks[i] = listTasks.getJSONObject(i).getJSONObject("taskName") + "";
-                    durations[i] = listTasks.getJSONObject(i).getJSONObject("taskDuration") + "";
-                }
-                Log.i("List Manager", "JSON PARSER: " + listName + "\n\ttasks: " + tasks + "\n\tdurations: " + durations);
-                */
             }
+
 
         }
 
@@ -101,7 +99,7 @@ public class CreateNewTaskActivity extends AppCompatActivity {
         {
             Log.i("List Manager", "LM: IO Exception");
         } catch (JSONException e) {
-            Log.i("List Manager", "LM: JSON Exception" + e.getMessage());
+            Log.i("List Manager", "LM: JSON Exception " + e.getMessage());
         }
     }
 

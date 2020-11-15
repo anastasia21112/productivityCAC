@@ -3,40 +3,40 @@
   [
 
       {
-        "listName": "",
+        "listName": "lst",
         "tasks":
         [
           {
             "taskName": "study for CS",
-            "taskDuration": ""
+            "taskDuration": "54"
           },
           {
             "taskName": "study for math",
-            "taskDuration": ""
+            "taskDuration": "2"
           },
           {
             "taskName": "study for physics",
-            "taskDuration": ""
+            "taskDuration": "4"
           }
         ]
 
       },
 
       {
-        "listName2": "",
+        "listName": "lst2",
         "tasks":
         [
           {
             "taskName": "study for LA",
-            "taskDuration": ""
+            "taskDuration": "12"
           },
           {
             "taskName": "study for history",
-            "taskDuration": ""
+            "taskDuration": "30"
           },
           {
             "taskName": "study for psych",
-            "taskDuration": ""
+            "taskDuration": "5"
           }
         ]
 

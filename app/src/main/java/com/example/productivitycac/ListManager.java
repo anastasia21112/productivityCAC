@@ -3,6 +3,7 @@ package com.example.productivitycac;
 import android.content.Context;
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -89,17 +90,6 @@ public class ListManager {
             jsonString = new String(buffer, "UTF-8");
             Log.i("List Manager", "LM: " + jsonString);
 
-            /*
-            Object obj = new JSONParser().parse(new FileReader(new File("listManager.json")));
-
-            JSONObject jo = (JSONObject) obj;
-
-            // getting firstName and lastName
-            String list = (String) jo.get("listName");
-            Log.i("List Manager", list);
-
-             */
-
         }
 
         catch(FileNotFoundException e)
@@ -112,19 +102,45 @@ public class ListManager {
         return jsonString;
     }
 
-    public void parseJSON(String jsonString) {
+    public void parseJSON(String jsonString)
+    {
+
         try
         {
-            JSONObject obj = new JSONObject(jsonString);
-            String task1 = obj.getJSONObject("listName").getString("task1");
-            Log.i("List Manager", "LM: TASK1: " + task1);
-        }
 
+            Map listManager = new HashMap<String, ArrayList<Object>>();
+
+            JSONObject obj = new JSONObject(jsonString);
+            JSONArray taskListArray = obj.getJSONArray("lists");
+
+            for (int i = 0; i < taskListArray.length(); i++)
+            {
+                JSONObject listObj =  (JSONObject) taskListArray.get(i);
+                JSONArray jsonTasks = listObj.getJSONArray("tasks");
+
+                Log.i("List Manager", "listName: " + listObj.get("listName"));
+                ArrayList<Object> tasks = new ArrayList<Object>();
+
+
+                for(int j = 0; j < jsonTasks.length(); j++)
+                {
+                    ArrayList<Object> task = new ArrayList<Object>();
+
+                    JSONObject jsonTask = (JSONObject) jsonTasks.get(j);
+                    task.add(jsonTask.get("taskName"));
+                    task.add(jsonTask.get("taskDuration"));
+
+                    tasks.add(task);
+
+                }
+                Log.i("List Manager", "Tasks in : " + listObj.get("listName") + ": " + tasks);
+
+            }
+        }
         catch (JSONException e)
         {
-            Log.i("List Manager", "LM: JSON Exception");
+            Log.i("List Manager", "LM: JSON Exception" + e.getMessage());
         }
-
     }
     public void addTaskToList(String task, double duration, String listName)
     {
