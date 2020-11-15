@@ -101,7 +101,7 @@
         android:layout_marginRight="67dp"
         android:layout_marginBottom="100dp"
         android:background="#FFFFFF"
-        android:text="Cancel"
+        android:text="New Account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn1"
         app:layout_constraintHorizontal_bias="0.419"

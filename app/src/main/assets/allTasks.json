@@ -1,0 +1,28 @@
+{
+  "tasks":
+  [
+    {
+      "taskName": "task1",
+      "taskDuration": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "taskName": "task2",
+      "taskDuration": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+
+
+  ]
+
+}

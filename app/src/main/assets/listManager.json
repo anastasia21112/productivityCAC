@@ -1,0 +1,47 @@
+{
+  "lists":
+  [
+
+      {
+        "listName": "lst",
+        "tasks":
+        [
+          {
+            "taskName": "study for CS",
+            "taskDuration": "54"
+          },
+          {
+            "taskName": "study for math",
+            "taskDuration": "2"
+          },
+          {
+            "taskName": "study for physics",
+            "taskDuration": "4"
+          }
+        ]
+
+      },
+
+      {
+        "listName": "lst2",
+        "tasks":
+        [
+          {
+            "taskName": "study for LA",
+            "taskDuration": "12"
+          },
+          {
+            "taskName": "study for history",
+            "taskDuration": "30"
+          },
+          {
+            "taskName": "study for psych",
+            "taskDuration": "5"
+          }
+        ]
+
+      }
+
+  ]
+
+}
