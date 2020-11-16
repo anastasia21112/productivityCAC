@@ -76,8 +76,10 @@ public class ToDoList extends AppCompatActivity {
         Map allLists = ListManager.listManager;
 
         Iterator iterator = allLists.entrySet().iterator();
+        Log.i("WE ARE HERE: ", "hereeeee");
         while(iterator.hasNext())
         {
+            Log.i("WE ARE HERE: ", "hereeeee NOW ");
             Map.Entry list = (Map.Entry)iterator.next();
 
             String listName = (String) list.getKey();
