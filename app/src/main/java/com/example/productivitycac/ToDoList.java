@@ -82,7 +82,7 @@ public class ToDoList extends AppCompatActivity {
 
             String listName = (String) list.getKey();
             ArrayList<Object> listTasks = (ArrayList<Object>) list.getValue();
-
+            Log.i("size: ", "" + listTasks.size());
             for(int i = 0; i < listTasks.size(); i++)
             {
                 ArrayList<Object> task =  (ArrayList<Object>) listTasks.get(i);
