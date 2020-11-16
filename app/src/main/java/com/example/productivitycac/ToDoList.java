@@ -73,11 +73,19 @@ public class ToDoList extends AppCompatActivity {
 
     public void extractData()
     {
+        Log.i("we are here?", "next....");
         Map allLists = ListManager.listManager;
+        Log.i("here", "the size is " + allLists.size());
+        for (Object keys : allLists.keySet())
+        {
+            Log.i("da keys", "this is the key: " + keys);
+
+        }
 
         Iterator iterator = allLists.entrySet().iterator();
-        Log.i("WE ARE HERE: ", "hereeeee");
-        Log.i("we are here?", "" + iterator.hasNext());
+        Log.i("we are here?", "next...." + iterator.hasNext());
+
+
         while(iterator.hasNext())
         {
             Log.i("WE ARE HERE: ", "hereeeee NOW ");
