@@ -80,27 +80,33 @@ public class CreateNewTaskActivity extends AppCompatActivity {
 
             Map allLists = ListManager.listManager;
 
-            Iterator iterator = allLists.entrySet().iterator();
-            while(iterator.hasNext())
+            Log.i("LM", "the size is " + allLists.size());
+            for (Object keys : allLists.keySet())
             {
-                Map.Entry list = (Map.Entry)iterator.next();
-                Log.i("List Manager", "current list : " + list);
-
-                String listName = (String) list.getKey();
-                ArrayList<Object> listTasks = (ArrayList<Object>) list.getValue();
-
-                for(int i = 0; i < listTasks.size(); i++)
-                {
-                    ArrayList<Object> task =  (ArrayList<Object>) listTasks.get(i);
-                    String taskName = (String) task.get(0);
-                    Double taskDuration = Double.parseDouble(task.get(1).toString());
-
-                    Log.i("List Manager", "current task name and duration : " + taskName + ", " + taskDuration);
-                }
+                Log.i("LM", "this is the key: " + keys);
 
             }
 
+            Iterator iterator = allLists.entrySet().iterator();
+            Log.i("LM", "next...." + iterator.hasNext());
 
+
+            while(iterator.hasNext()) {
+                Log.i("LM: ", "hereeeee NOW ");
+                Map.Entry list = (Map.Entry) iterator.next();
+
+                String listName = (String) list.getKey();
+                ArrayList<Object> listTasks = (ArrayList<Object>) list.getValue();
+                Log.i("LM: ", "" + listTasks.size());
+                for (int i = 0; i < listTasks.size(); i++) {
+                    ArrayList<Object> task = (ArrayList<Object>) listTasks.get(i);
+                    String taskName = (String) task.get(0);
+                    Double taskDuration = Double.parseDouble(task.get(1) + "");
+                    Log.i("LM: ", taskName);
+                    Log.i("LM: ", "" + taskDuration);
+                    //addRow(tableLayout, taskName, taskDuration, i);
+                }
+            }
         }
 
         catch(FileNotFoundException e)

@@ -75,6 +75,7 @@ public class ToDoList extends AppCompatActivity {
     {
         Log.i("we are here?", "next....");
         Map allLists = ListManager.listManager;
+
         Log.i("here", "the size is " + allLists.size());
         for (Object keys : allLists.keySet())
         {
@@ -98,7 +99,7 @@ public class ToDoList extends AppCompatActivity {
             {
                 ArrayList<Object> task =  (ArrayList<Object>) listTasks.get(i);
                 String taskName = (String) task.get(0);
-                Double taskDuration = (Double) task.get(1);
+                Double taskDuration = Double.parseDouble(task.get(1) + "");
                 Log.i("task name: ", taskName);
                 Log.i("task duration: ", "" + taskDuration);
                 addRow(tableLayout, taskName, taskDuration, i);
