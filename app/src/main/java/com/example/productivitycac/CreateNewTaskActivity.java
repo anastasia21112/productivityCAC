@@ -39,7 +39,7 @@ public class CreateNewTaskActivity extends AppCompatActivity {
         String jsonString = "";
         try
         {
-            InputStream is = this.getApplicationContext().getAssets().open("allTasks.json");
+            InputStream is = this.getAssets().open("allTasks.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
