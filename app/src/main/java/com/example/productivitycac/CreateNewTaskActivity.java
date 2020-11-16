@@ -139,33 +139,33 @@ public class CreateNewTaskActivity extends AppCompatActivity {
      }*/
 
     public void goToToDoList(View v) {
-        Log.i("TODO", "TRIED TO GO TO TO DO LIST");
-        EditText taskName = findViewById(R.id.taskNameInput);
-        EditText taskTime = findViewById(R.id.taskTimeInput);
-
-        String taskNameStr = taskName.getText().toString();
-        String taskTimeString = taskTime.getText().toString();
-
-        ToDoList list = new ToDoList();
+//        Log.i("TODO", "TRIED TO GO TO TO DO LIST");
+//        EditText taskName = findViewById(R.id.taskNameInput);
+//        EditText taskTime = findViewById(R.id.taskTimeInput);
+//
+//        String taskNameStr = taskName.getText().toString();
+//        String taskTimeString = taskTime.getText().toString();
+//
+//        ToDoList list = new ToDoList();
         Intent intent = new Intent(this, ToDoList.class);
         startActivity(intent);
 
         //list.addRow(taskNameStr);
     }
 
-    public void sendNewTask(View v) {
-        EditText taskName = findViewById(R.id.taskNameInput);
-        EditText taskTime = findViewById(R.id.taskTimeInput);
-
-        String taskNameString = taskName.getText().toString();
-        String taskTimeString = taskTime.getText().toString();
-
-        Intent nameIntent = new Intent(this, ToDoList.class);
-        nameIntent.putExtra("taskName", taskNameString);
-        startActivity(nameIntent);
-
-        Intent timeIntent = new Intent(this, ToDoList.class);
-        timeIntent.putExtra("taskTime", taskTimeString);
-        startActivity(timeIntent);
-    }
+//    public void sendNewTask(View v) {
+//        EditText taskName = findViewById(R.id.taskNameInput);
+//        EditText taskTime = findViewById(R.id.taskTimeInput);
+//
+//        String taskNameString = taskName.getText().toString();
+//        String taskTimeString = taskTime.getText().toString();
+//
+//        Intent nameIntent = new Intent(this, ToDoList.class);
+//        nameIntent.putExtra("taskName", taskNameString);
+//        startActivity(nameIntent);
+//
+//        Intent timeIntent = new Intent(this, ToDoList.class);
+//        timeIntent.putExtra("taskTime", taskTimeString);
+//        startActivity(timeIntent);
+//    }
 }
