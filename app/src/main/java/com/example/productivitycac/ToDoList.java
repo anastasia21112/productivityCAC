@@ -77,6 +77,7 @@ public class ToDoList extends AppCompatActivity {
 
         Iterator iterator = allLists.entrySet().iterator();
         Log.i("WE ARE HERE: ", "hereeeee");
+        Log.i("we are here?", "" + iterator.hasNext());
         while(iterator.hasNext())
         {
             Log.i("WE ARE HERE: ", "hereeeee NOW ");
