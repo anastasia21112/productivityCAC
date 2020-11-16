@@ -28,7 +28,7 @@ public class CreateNewTaskActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        new ListManager(this.getApplicationContext(), "listManager.json");
+        new ListManager(this, "listManager.json");
         Log.i("TODO", "NEW TASK CREATED");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.createnewtask_activity);
