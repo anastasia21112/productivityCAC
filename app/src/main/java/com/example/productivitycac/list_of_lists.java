@@ -1,14 +1,14 @@
 package com.example.productivitycac;
 
-import androidx.appcompat.app.AppCompatActivity;
-import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
-import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 public class list_of_lists extends AppCompatActivity {
 
@@ -35,10 +35,6 @@ public class list_of_lists extends AppCompatActivity {
                 goBack(v);
             }
         });
-
-
-
-
     }
 
     public void toHomeworkList(View v)

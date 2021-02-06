@@ -13,11 +13,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-//import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
-import java.util.List;
-import java.util.Scanner;
+//import com.google.gson.reflect.TypeToken;
 
 //imports needed to read into the JSON file
 //manages list for all to do lists so that the page updates whenever returning there
@@ -27,8 +24,9 @@ import java.util.Scanner;
 public class ListManager {
 
     //TODO: figure out how to parse information to list
-    public static Map listManager = new HashMap<String, ArrayList<Object>>();
+    public static Map listManager = new HashMap<String, ArrayList<Task>>();
     public static Map allTasks = new HashMap<String, ArrayList<Double>>();
+
     public ListManager(Context context, String fileName)
     {
 
