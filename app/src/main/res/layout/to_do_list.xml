@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text=" Task name                                           Estimated time to complete"
+        android:text=" Task name                                       Estimated time to complete"
         android:textSize="14sp" />
 
     <TableLayout

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+import android.widget.LinearLayout;
 public class ToDoList extends AppCompatActivity {
 
     //TODO: try to get todo list to save to a global arraylist: https://stackoverflow.com/questions/36069886/how-to-create-an-arraylist-that-is-accessible-by-different-classes-in-android
@@ -33,6 +35,8 @@ public class ToDoList extends AppCompatActivity {
     public void addRow(TableLayout table, String name, Double time, int rowNum)
     {
         TableRow row = new TableRow(this);
+        row.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        row.setWeightSum(1.0f);
 
         CheckBox checkBox = new CheckBox(this);
         checkBox.setText(name);
@@ -45,10 +49,21 @@ public class ToDoList extends AppCompatActivity {
         taskTime.setTextColor(Color.WHITE);
         taskTime.setGravity(Gravity.RIGHT);
 
+<<<<<<< HEAD
         //row.setGravity(Gravity.LEFT);
+=======
+        taskTime.setGravity(Gravity.RIGHT);
+
+
+
+>>>>>>> cf7d646ecd4c20c191fd11d8b8af4fae8b6141ca
         row.addView(checkBox);
+
         row.addView(taskTime);
         table.addView(row);
+
+        row.setMinimumWidth(checkBox.getWidth() + taskTime.getWidth());
+
         table.setVisibility(View.VISIBLE);
     }
     public void sendMessage(View view) {
@@ -106,6 +121,7 @@ public class ToDoList extends AppCompatActivity {
                 Log.i("task name: ", taskName);
                 Log.i("task duration: ", "" + taskDuration);
                 addRow(tableLayout, taskName, taskDuration, i);
+
             }
 
         }

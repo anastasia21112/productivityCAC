@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,9 +15,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -48,65 +51,13 @@ public class CreateNewTaskActivity extends AppCompatActivity {
             jsonString = new String(buffer, "UTF-8");
 
             JSONObject obj = new JSONObject(jsonString);
-//
-//            String task1 = obj.getJSONObject("listName").getString("task1");
-//            Log.i("List Manager", "LM: TASK1: " + task1);
-//
-//            String task1Details = obj.getJSONObject("listName").getJSONObject("task1").getString("taskName");
-//            Log.i("List Manager", "LM: TASK1NAME: " + task1Details);
 
-            Map allTasks = new HashMap<String, ArrayList<Double>>();
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(this.openFileOutput("allTasks.json", this.getApplicationContext().MODE_PRIVATE));
+            Log.i("List Manager", "OSW1: " + outputStreamWriter);
+            outputStreamWriter.write("hello");
+            //outputStreamWriter.close();
 
 
-            JSONArray taskListArray = obj.getJSONArray("tasks");
-
-            for (int i = 0; i < taskListArray.length(); i++)
-            {
-                JSONObject listObj =  (JSONObject) taskListArray.get(i);
-                JSONArray jsonDurations = listObj.getJSONArray("taskDuration");
-
-                Log.i("List Manager", "listName: " + listObj.get("taskName"));
-                ArrayList<Object> durations = new ArrayList<Object>();
-
-
-                for(int j = 0; j < jsonDurations.length(); j++)
-                {
-                    Integer jsonTask =  (Integer)jsonDurations.get(j);
-                    durations.add(jsonTask.doubleValue());
-                }
-
-                allTasks.put(listObj.get("taskName"), durations);
-            }
-
-            Map allLists = ListManager.listManager;
-
-            Log.i("LM", "the size is " + allLists.size());
-            for (Object keys : allLists.keySet())
-            {
-                Log.i("LM", "this is the key: " + keys);
-
-            }
-
-            Iterator iterator = allLists.entrySet().iterator();
-            Log.i("LM", "next...." + iterator.hasNext());
-
-
-            while(iterator.hasNext()) {
-                Log.i("LM: ", "hereeeee NOW ");
-                Map.Entry list = (Map.Entry) iterator.next();
-
-                String listName = (String) list.getKey();
-                ArrayList<Object> listTasks = (ArrayList<Object>) list.getValue();
-                Log.i("LM: ", "" + listTasks.size());
-                for (int i = 0; i < listTasks.size(); i++) {
-                    ArrayList<Object> task = (ArrayList<Object>) listTasks.get(i);
-                    String taskName = (String) task.get(0);
-                    Double taskDuration = Double.parseDouble(task.get(1) + "");
-                    Log.i("LM: ", taskName);
-                    Log.i("LM: ", "" + taskDuration);
-                    //addRow(tableLayout, taskName, taskDuration, i);
-                }
-            }
         }
 
         catch(FileNotFoundException e)

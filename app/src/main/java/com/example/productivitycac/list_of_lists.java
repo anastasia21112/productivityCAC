@@ -1,9 +1,5 @@
 package com.example.productivitycac;
 
-import androidx.appcompat.app.AppCompatActivity;
-import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
-import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,11 +7,19 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.CheckBox;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+=======
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
+>>>>>>> cf7d646ecd4c20c191fd11d8b8af4fae8b6141ca
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -46,10 +50,6 @@ public class list_of_lists extends AppCompatActivity {
                 goBack(v);
             }
         });
-
-
-
-
     }
 
     public void toHomeworkList(View v)
