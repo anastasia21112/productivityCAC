@@ -5,14 +5,26 @@ import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
 import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 public class list_of_lists extends AppCompatActivity {
 
     private Button homeworkButton;
+    protected static TableLayout tableLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +32,7 @@ public class list_of_lists extends AppCompatActivity {
 
         Button homeworkButton = (Button) findViewById(R.id.hw_button);
         Button backButton = (Button) findViewById(R.id.button6);
-        //listTutorial();
-
+        //listTutorial()
         homeworkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +54,7 @@ public class list_of_lists extends AppCompatActivity {
 
     public void toHomeworkList(View v)
     {
-
+        //extractData();
         Intent intent = new Intent(this, ToDoList.class);
         startActivity(intent);
     }
@@ -68,5 +79,6 @@ public class list_of_lists extends AppCompatActivity {
 
         sequence.start();
     }
+
 
 }

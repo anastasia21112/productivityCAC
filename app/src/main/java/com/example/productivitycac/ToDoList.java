@@ -20,13 +20,14 @@ public class ToDoList extends AppCompatActivity {
 
     //TODO: try to get todo list to save to a global arraylist: https://stackoverflow.com/questions/36069886/how-to-create-an-arraylist-that-is-accessible-by-different-classes-in-android
     protected static TableLayout tableLayout;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.to_do_list);
         tableLayout = (TableLayout) findViewById(R.id.table);
-        extractData();
+        //extractData();
     }
 
     public void addRow(TableLayout table, String name, Double time, int rowNum)
@@ -36,13 +37,15 @@ public class ToDoList extends AppCompatActivity {
         CheckBox checkBox = new CheckBox(this);
         checkBox.setText(name);
         checkBox.setTextColor(Color.WHITE);
+        checkBox.setGravity(Gravity.LEFT);
 
         TextView taskTime = new TextView(this);
         String timeString = time + "";
         taskTime.setText(timeString);
         taskTime.setTextColor(Color.WHITE);
+        taskTime.setGravity(Gravity.RIGHT);
 
-        row.setGravity(Gravity.CENTER);
+        //row.setGravity(Gravity.LEFT);
         row.addView(checkBox);
         row.addView(taskTime);
         table.addView(row);
