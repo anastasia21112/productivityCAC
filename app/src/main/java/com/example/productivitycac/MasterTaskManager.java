@@ -24,7 +24,7 @@ public class MasterTaskManager
     {
         if(this.allTasks.containsKey(listName))
         {
-            if(this.listManager.containsTask(taskName)) //if the task already exists, add it to the list manager after factoring the newest estimate into the predicted time
+            if(this.listManager.containsTask(taskName)) //if the task already exists, add it to the list manager after facotring the newest estimate into the predicted time
             {
                 ArrayList<Double> timesForTask = allTasks.get(taskName);
                 timesForTask.add(time);
@@ -59,26 +59,27 @@ public class MasterTaskManager
         return total / taskTimes.size();
     }
 
-    // Saves all master task information to a formatted tab file
-    //Format of saved file
+    // Saves all task information to a formatted tab file
+    //Saved in this format
     /*
-    taskName1 \t time1 \t time2 \t etc. \n
-    taskName2 \t time1 \t time2 \t etc. \n
+    taskName1 \t time1 \t time2\ etc. \t \n
+    taskName2 \t time1 \t time2\ etc. \t \n
      */
-    public void saveToMasterTaskFile(String filePath) throws IOException
+    public void saveToTaskFile(String filePath) throws IOException
     {
         FileWriter writer = new FileWriter(filePath);
 
-        writer.write(tabSeparateMasterTask());
+        writer.write(tabSeparateContents());
 
         writer.close();
     }
 
-    public String tabSeparateMasterTask()
+    // Returns comma separated information of all tasks
+    public String tabSeparateContents()
     {
-        String tabContents = "";
-        Set<String> allTaskNames = this.allTasks.keySet();
-        Object[] keyArray = allTaskNames.toArray();
+        String contents = "";
+        Set<String> taskNames = this.allTasks.keySet();
+        Object[] keyArray = taskNames.toArray();
         ArrayList<String> keyArrayList = new ArrayList<String>();
         for(int i = 0; i < keyArray.length; i++)
         {
@@ -87,23 +88,23 @@ public class MasterTaskManager
 
         for(int i = 0; i < keyArrayList.size(); i++)
         {
-            String taskName = keyArrayList.get(i);
+            String keyName = keyArrayList.get(i);
 
-            tabContents = tabContents + taskName + "\t";
+            contents = contents + keyName + "\t";
 
-            for(int j = 0; j < allTasks.get(taskName).size(); j++)
+            for(int j = 0; j < allTasks.get(keyName).size(); j++)
             {
-
-                tabContents = tabContents + allTasks.get(taskName).get(j);
+                contents = contents + allTasks.get(keyName).get(j) + "\t";
             }
-            tabContents = tabContents + "\n";
+            contents = contents + "\n";
         }
-        return tabContents;
+        return contents;
     }
 
+
     // Reads information from the tab file
-    // Inputs information into the master task manager to be displayed when application opens
-    public void readfromTabFile(String filePath) throws FileNotFoundException
+    // Inputs information into the arraylists to be displayed when application opens
+    public void readfromTaskFile(String filePath) throws FileNotFoundException
     {
         File myFile = new File(filePath);
         Scanner reader = new Scanner(myFile);
@@ -111,10 +112,9 @@ public class MasterTaskManager
         while(reader.hasNextLine())
         {
             String nextLine = reader.nextLine();
-
             try
             {
-                readTabLine(nextLine);
+                readTaskLine(nextLine);
             }
             catch (Exception e) {}
         }
@@ -122,22 +122,21 @@ public class MasterTaskManager
         reader.close();
     }
 
-    //Add single key input mapped to arraylist containing times
-    public void readTabLine(String singleFileLine) throws IOException
+    // Reads tab separated information and inputs information into correct hashmap
+    public void readTaskLine(String singleFileLine) throws IOException
     {
         // The first item in the list is always the name of the task
         int firstTabIndex = singleFileLine.indexOf("\t");
         String taskName = singleFileLine.substring(0,firstTabIndex);
 
         ArrayList<Double> times = new ArrayList<Double>();
-        String remainingTimes = singleFileLine.substring(firstTabIndex + 1);
+        String remainingTasks = singleFileLine.substring(firstTabIndex + 1);
 
         //Turn string into char array to be read one at a time
-        char[] stringCharacters = new char[remainingTimes.length()];
+        char[] stringCharacters = new char[remainingTasks.length()];
 
-        for (int i = 0; i < remainingTimes.length(); i++)
-        {
-            stringCharacters[i] = remainingTimes.charAt(i);
+        for (int i = 0; i < remainingTasks.length(); i++) {
+            stringCharacters[i] = remainingTasks.charAt(i);
         }
 
         String timeString = "";
@@ -155,7 +154,7 @@ public class MasterTaskManager
             }
         }
 
-        this.allTasks.put(taskName, times);
-    }
+        allTasks.put(taskName, times);
 
+    }
 }
