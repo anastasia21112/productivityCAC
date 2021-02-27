@@ -14,68 +14,90 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-//import com.google.gson.reflect.TypeToken;
-
-//imports needed to read into the JSON file
-//manages list for all to do lists so that the page updates whenever returning there
-
-
-
 public class ListManager {
 
-    //TODO: figure out how to parse information to list
-    public static Map listManager = new HashMap<String, ArrayList<Task>>();
-    public static Map allTasks = new HashMap<String, ArrayList<Double>>();
+
+    public static HashMap<String, HashMap<String, Double>> listManager;
 
     public ListManager(Context context, String fileName)
     {
 
-        // typecasting obj to JSONObject
-        this.listManager = this.parseListManager(this.getJSON(context, fileName));
-        this.allTasks = this.parseAllTasks(this.getJSON(context, fileName));
+        // TODO: if there is a file with all of information, use it to repopulate the lust
+        //this.listManager = this.parseListManager(this.getJSON(context, fileName));
+        //this.allTasks = this.parseAllTasks(this.getJSON(context, fileName));
+        this(context);
     }
+    public ListManager(Context context)
+    {
+        listManager = new HashMap<String, HashMap<String, Double>>();
+    }
+    //TODO: figure out how to parse information to list
     /*
         Structure:
-        listManager:
-            <String>: get list by it's name (string)
-            <ArrayList<Object>: each list of tasks
-                each list of tasks: {[task, duration], [task, duration]};
-                    duration: once done, add task name and duration to 'all tasks' map
-                               makes it so any task can be in any list and still get averaged for time
-        allTasks: stores name and duration[] for all tasks as a record for averaging times
+        HashMap for each list
+            list: HashMap with each task and it's average time of completion
 
-     */
-
-    /*
-        saves information to a file called list manager
-        list manager stores each list as an object
-        each list object has sub objects for the tasks
-        each task has key value pairs for each task definition
-
-        ex:
-        listManager:
+        Example:
         {
-            listName:
-            {
-                task1:
+            "list 1": {
                 {
-                    taskName: ""
-                    taskDuration: ""
+                    "eat breakfast": 30,
+                    "clean room": 45
                 }
             },
-            listName:
-            {
-                task1:
-                {
-                    taskName: ""
-                    taskDuration: ""
-                }
+
+            "list 2": {
+
             }
+
         }
 
-        json node calls list manager
-     */
+    */
 
+    public boolean containsTask(String taskName)
+    {
+        for(String list: this.listManager.keySet())
+        {
+            if(this.listManager.get(list).containsKey(taskName)) //if a list has a task, return true
+                return true;
+        }
+        return false;
+    }
+    public void addTaskToList(String taskName, double averagedTime, String listName)
+    {
+
+         if(this.listManager.containsKey(listName)) //if the list exists
+            {
+                this.listManager.get(listName).put(taskName, averagedTime); // then find the list and add a new task with the averaged time
+            }
+
+    }
+    public void removeTaskFromList(String taskName, String listName)
+    {
+
+        if(this.listManager.containsKey(listName)) //if the list exists
+        {
+            this.listManager.get(listName).remove(taskName); // then find the list and remove the desired task
+        }
+
+    }
+    public Double getTaskTime(String listName, String taskName)
+    {
+        if(this.listManager.containsKey(listName)) //if the list exists
+            {
+               if(this.listManager.get(listName).containsKey(taskName))
+               {
+                   return this.listManager.get(listName).get(taskName);
+               }
+            }
+
+
+        return null;
+    }
+
+
+
+//******************************* Specific to reading and writing from files (Angela's part) *******************************
     public String getJSON(Context context, String fileName)
     {
         String jsonString = "";
@@ -146,47 +168,5 @@ public class ListManager {
     {
         return null;
     }
-    public void addTaskToList(String task, double duration, String listName)
-    {
-        //TODO return an arraylist depending on listName
-        try
-        {
-            ArrayList taskDetails = new ArrayList<>();
-            taskDetails.add(task);
-            taskDetails.add(duration);
 
-            ArrayList<ArrayList<Object>> list = (ArrayList<ArrayList<Object>>) listManager.get(listName);
-            list.add(taskDetails);
-        }
-        catch(NullPointerException e)
-        {
-            Log.i("List Manager","entered an invalid list name");
-        }
-    }
-
-    public ArrayList getTaskDetails(String listName, String taskName)
-    {
-        ArrayList list = (ArrayList) listManager.get(listName);
-
-        if(list.indexOf(taskName) != -1)
-            return (ArrayList) list.get(list.indexOf(taskName));
-        return null;
-    }
-
-    public void removeTaskToList(String task, double duration, String listName)
-    {
-        try
-        {
-            ArrayList taskDetails = new ArrayList<>();
-            taskDetails.add(task);
-            taskDetails.add(duration);
-
-            ArrayList<ArrayList<Object>> list = (ArrayList<ArrayList<Object>>) listManager.get(listName);
-            list.remove(taskDetails);
-        }
-        catch(NullPointerException e)
-        {
-            Log.i("List Manager","entered an invalid list name");
-        }
-    }
 }

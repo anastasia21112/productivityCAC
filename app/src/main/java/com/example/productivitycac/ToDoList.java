@@ -49,14 +49,11 @@ public class ToDoList extends AppCompatActivity {
         taskTime.setTextColor(Color.WHITE);
         taskTime.setGravity(Gravity.RIGHT);
 
-<<<<<<< HEAD
         //row.setGravity(Gravity.LEFT);
-=======
         taskTime.setGravity(Gravity.RIGHT);
 
 
 
->>>>>>> cf7d646ecd4c20c191fd11d8b8af4fae8b6141ca
         row.addView(checkBox);
 
         row.addView(taskTime);
