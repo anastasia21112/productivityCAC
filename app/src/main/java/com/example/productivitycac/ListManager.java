@@ -22,7 +22,7 @@ public class ListManager {
     public ListManager(Context context, String fileName)
     {
 
-        // TODO: if there is a file with all of information, use it to repopulate the lust
+        // TODO: if there is a file with all of information, use it to repopulate the list
         //this.listManager = this.parseListManager(this.getJSON(context, fileName));
         //this.allTasks = this.parseAllTasks(this.getJSON(context, fileName));
         this(context);
