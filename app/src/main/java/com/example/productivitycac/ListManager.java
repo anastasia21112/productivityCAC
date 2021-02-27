@@ -54,7 +54,15 @@ public class ListManager {
 
     */
 
-
+    public boolean containsTask(String taskName)
+    {
+        for(String list: this.listManager.keySet())
+        {
+            if(this.listManager.get(list).containsKey(taskName)) //if a list has a task, return true
+                return true;
+        }
+        return false;
+    }
     public void addTaskToList(String taskName, double averagedTime, String listName)
     {
 
