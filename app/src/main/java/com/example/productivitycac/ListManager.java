@@ -13,7 +13,16 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import android.content.Context;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Set;
 public class ListManager {
 
 
@@ -97,76 +106,125 @@ public class ListManager {
 
 
 
-//******************************* Specific to reading and writing from files (Angela's part) *******************************
-    public String getJSON(Context context, String fileName)
+    // Write to list manager file
+    // Writes to file in this format
+    // listName1 \t taskName1 \t taskTime1 \t taskName2 \t taskTime2 \t \n
+    // listName2 \t taskName1 \t taskTime1 \t taskName2 \t taskTime2 \t \n
+    public void saveToTaskFile(String filePath) throws IOException
     {
-        String jsonString = "";
-        try
-        {
-            InputStream is = context.getAssets().open("listManager.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
+        FileWriter writer = new FileWriter(filePath);
 
-            jsonString = new String(buffer, "UTF-8");
+        writer.write(tabSeparateListManager());
 
-
-        }
-
-        catch(FileNotFoundException e)
-        {
-            Log.i("List Manager", "LM: UNABLE TO FIND FILE");
-        } catch (IOException e)
-        {
-            Log.i("List Manager", "LM: IO Exception");
-        }
-        return jsonString;
+        writer.close();
     }
 
-    public Map parseListManager(String jsonString)
+    public String tabSeparateListManager()
     {
-
-        try
+        String contents = "";
+        Set<String> listNames = this.listManager.keySet();
+        Object[] keyArray = listNames.toArray();
+        ArrayList<String> keyArrayList = new ArrayList<String>();
+        for(int i = 0; i < keyArray.length; i++)
         {
+            keyArrayList.add((String) keyArray[i]);
+        }
 
-            Map listManager = new HashMap<String, ArrayList<Object>>();
+        for(int i = 0; i < keyArrayList.size(); i++)
+        {
+            String keyName = keyArrayList.get(i);
 
-            JSONObject obj = new JSONObject(jsonString);
-            JSONArray taskListArray = obj.getJSONArray("lists");
+            contents = contents + keyName + "\t";
 
-            for (int i = 0; i < taskListArray.length(); i++)
+            for(int j = 0; j < listManager.get(keyName).size(); j++)
             {
-                JSONObject listObj =  (JSONObject) taskListArray.get(i);
-                JSONArray jsonTasks = listObj.getJSONArray("tasks");
-
-                ArrayList<Object> tasks = new ArrayList<Object>();
-
-
-                for(int j = 0; j < jsonTasks.length(); j++)
+                Set<String> taskNames = this.listManager.get(keyName).keySet();
+                Object[] taskKeyArray = taskNames.toArray();
+                ArrayList<String> taskKeyArrayList = new ArrayList<String>();
+                for(int k = 0; k < taskKeyArray.length; k++)
                 {
-                    ArrayList<Object> task = new ArrayList<Object>();
-
-                    JSONObject jsonTask = (JSONObject) jsonTasks.get(j);
-                    task.add(jsonTask.get("taskName"));
-                    task.add(jsonTask.get("taskDuration"));
-
-                    tasks.add(task);
+                    taskKeyArrayList.add((String) keyArray[k]);
                 }
-                listManager.put(listObj.get("listName"), tasks);
+
+                for(int m = 0; m < taskKeyArrayList.size(); m++)
+                {
+                    String taskName = taskKeyArrayList.get(m);
+
+                    contents = contents + taskName + "\t";
+                    contents = contents + listManager.get(taskName).get(m) + "\t";
+                }
+            }
+            contents = contents + "\n";
+        }
+
+        return contents;
+    }
+
+    // Reads information from the tab file
+    // Inputs information into the hashmaps to be displayed when application opens
+    public void readfromListManagerFile(String filePath) throws FileNotFoundException
+    {
+        File myFile = new File(filePath);
+        Scanner reader = new Scanner(myFile);
+
+        while(reader.hasNextLine())
+        {
+            String nextLine = reader.nextLine();
+            try
+            {
+                readListManagerLine(nextLine);
+            }
+            catch (Exception e) {}
+        }
+
+        reader.close();
+    }
+
+    // Reads tab separated information and inputs information into correct hashmap
+    public void readListManagerLine(String singleFileLine) throws IOException
+    {
+        // The first item in the list is always the name of the list
+        int firstTabIndex = singleFileLine.indexOf("\t");
+        String listName = singleFileLine.substring(0,firstTabIndex);
+        HashMap<String,Double> taskInformation = new HashMap<String,Double>();
+
+        String remainingInfo = singleFileLine.substring(firstTabIndex + 1);
+
+        //Turn string into char array to be read one at a time
+        char[] stringCharacters = new char[remainingInfo.length()];
+
+        for (int i = 0; i < remainingInfo.length(); i++) {
+            stringCharacters[i] = remainingInfo.charAt(i);
+        }
+
+        // Tab counter counts how many time a tab has been read in the file
+        // When the second tab is reached this indicates all information for a single task and can be put in the hashmap
+        int tabCounter = 0;
+        String taskString = "";
+
+        for(int i = 0; i < stringCharacters.length; i++)
+        {
+            Character character = stringCharacters[i];
+            taskString = taskString + character;
+
+            if (character.equals('\t'))
+            {
+                tabCounter++;
+                if (tabCounter % 2 == 0)
+                {
+                    String delimiter = "[\t]";
+                    String[] tokens = taskString.split(delimiter, 2);
+                    String taskName = tokens[0];
+                    Double averageTime = Double.parseDouble(tokens[1]);
+
+                    taskInformation.put(taskName, averageTime);
+                    taskString = "";
+                }
 
             }
-            return listManager;
         }
-        catch (JSONException e)
-        {
-            Log.i("List Manager", "LM: JSON Exception" + e.getMessage());
-        }
-        return null;
-    }
-    public Map parseAllTasks(String jsonString)
-    {
-        return null;
+
+        listManager.put(listName, taskInformation);
     }
 
 }
