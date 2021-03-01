@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -26,49 +27,26 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class CreateNewTaskActivity extends AppCompatActivity {
-    private Button createButton, b1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        new ListManager(this, "listManager.json");
-        Log.i("TODO", "NEW TASK CREATED");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.createnewtask_activity);
+        final MasterTaskManager masterTaskManager = new MasterTaskManager();
+//        Button taskCreated = (Button) findViewById(R.id.createTaskButton);
+//
+//        taskCreated.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // once add button is clicked, the values in the fields are added to the taskManager
+//                EditText nameOfTask = (EditText) findViewById(R.id.taskNameInput);
+//                EditText estimatedTime = (EditText) findViewById(R.id.taskTimeInput);
+//
+//                masterTaskManager.addTask(nameOfTask.getText().toString(), Double.parseDouble(estimatedTime.getText().toString()), "homework");
+//
+//                Log.i("Create new task ", masterTaskManager.toString());
+//            }
+//        });
 
-
-        createButton = (Button) findViewById(R.id.createTaskButton);
-
-        String jsonString = "";
-        try
-        {
-            InputStream is = this.getAssets().open("allTasks.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-
-            jsonString = new String(buffer, "UTF-8");
-
-            JSONObject obj = new JSONObject(jsonString);
-
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(this.openFileOutput("allTasks.json", this.getApplicationContext().MODE_PRIVATE));
-            Log.i("List Manager", "OSW1: " + outputStreamWriter);
-            outputStreamWriter.write("hello");
-            //outputStreamWriter.close();
-
-
-        }
-
-        catch(FileNotFoundException e)
-        {
-            Log.i("List Manager", "LM: UNABLE TO FIND FILE");
-        } catch (IOException e)
-        {
-            Log.i("List Manager", "LM: IO Exception");
-        } catch (JSONException e) {
-            Log.i("List Manager", "LM: JSON Exception " + e.getMessage());
-        }
     }
 
     public void createTask(View v) {
