@@ -34,7 +34,7 @@ public class MasterTaskManager
         }
     }
 
-    public void addTask(String taskName,String listName)
+    public void removeTask(String taskName, String listName)
     {
         if(this.allTasks.containsKey(taskName))
         {
@@ -50,5 +50,18 @@ public class MasterTaskManager
             total += time;
 
         return total / taskTimes.size();
+    }
+
+    public String toString()
+    {
+        String str = "";
+
+        for(String taskName: allTasks.keySet())
+        {
+            str += taskName + " : " + allTasks.get(taskName) + ",\n";
+
+        }
+
+        return str;
     }
 }
