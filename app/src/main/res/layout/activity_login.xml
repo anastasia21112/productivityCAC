@@ -7,125 +7,125 @@
     android:layout_height="match_parent"
     android:background="@drawable/teal_purple_gradient">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-81dp">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:layout_editor_absoluteX="0dp"-->
+<!--        tools:layout_editor_absoluteY="-81dp">-->
 
-        <TextView
-            android:id="@+id/loginTitle"
-            android:layout_width="130dp"
-            android:layout_height="73dp"
-            android:layout_marginStart="125dp"
-            android:layout_marginLeft="125dp"
-            android:layout_marginTop="320dp"
-            android:layout_marginEnd="125dp"
-            android:layout_marginRight="125dp"
-            android:layout_marginBottom="300dp"
-            android:lineSpacingExtra="18sp"
-            android:text="Login "
-            android:textColor="#FFFFFF"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            app:fontFamily="sans-serif-black" />
+<!--        <TextView-->
+<!--            android:id="@+id/loginTitle"-->
+<!--            android:layout_width="130dp"-->
+<!--            android:layout_height="73dp"-->
+<!--            android:layout_marginStart="125dp"-->
+<!--            android:layout_marginLeft="125dp"-->
+<!--            android:layout_marginTop="320dp"-->
+<!--            android:layout_marginEnd="125dp"-->
+<!--            android:layout_marginRight="125dp"-->
+<!--            android:layout_marginBottom="300dp"-->
+<!--            android:lineSpacingExtra="18sp"-->
+<!--            android:text="Login "-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:textSize="50sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:fontFamily="sans-serif-black" />-->
 
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="394dp"
-            android:layout_height="45dp"
-            android:layout_alignTop="@id/loginTitle"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="90dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="95dp"
-            android:layout_marginEnd="90dp"
-            android:layout_marginRight="90dp"
-            android:layout_marginBottom="250dp"
-            android:ems="10"
-            android:hint="Username"
-            android:inputType="textPersonName"
-            android:textSize="24sp" />
+<!--        <EditText-->
+<!--            android:id="@+id/editText1"-->
+<!--            android:layout_width="394dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_alignTop="@id/loginTitle"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginStart="90dp"-->
+<!--            android:layout_marginLeft="90dp"-->
+<!--            android:layout_marginTop="95dp"-->
+<!--            android:layout_marginEnd="90dp"-->
+<!--            android:layout_marginRight="90dp"-->
+<!--            android:layout_marginBottom="250dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Username"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:textSize="24sp" />-->
 
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="212dp"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/editText1"
-            android:layout_marginStart="110dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="74dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginRight="90dp"
-            android:layout_marginBottom="250dp"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textSize="24sp" />
+<!--        <EditText-->
+<!--            android:id="@+id/editText2"-->
+<!--            android:layout_width="212dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignTop="@id/editText1"-->
+<!--            android:layout_marginStart="110dp"-->
+<!--            android:layout_marginLeft="90dp"-->
+<!--            android:layout_marginTop="74dp"-->
+<!--            android:layout_marginEnd="100dp"-->
+<!--            android:layout_marginRight="90dp"-->
+<!--            android:layout_marginBottom="250dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Password"-->
+<!--            android:inputType="textPassword"-->
+<!--            android:textSize="24sp" />-->
 
-        <Button
-            android:id="@+id/btn1"
-            android:layout_width="74dp"
-            android:layout_height="wrap_content"
-            android:layout_alignWithParentIfMissing="true"
-            android:layout_alignTop="@id/editText2"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="233dp"
-            android:layout_marginLeft="233dp"
-            android:layout_marginTop="110dp"
-            android:layout_marginEnd="90dp"
-            android:layout_marginRight="90dp"
-            android:layout_marginBottom="60dp"
-            android:background="#FFFFFF"
-            android:text="Login" />
+<!--        <Button-->
+<!--            android:id="@+id/btn1"-->
+<!--            android:layout_width="74dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignWithParentIfMissing="true"-->
+<!--            android:layout_alignTop="@id/editText2"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginStart="233dp"-->
+<!--            android:layout_marginLeft="233dp"-->
+<!--            android:layout_marginTop="110dp"-->
+<!--            android:layout_marginEnd="90dp"-->
+<!--            android:layout_marginRight="90dp"-->
+<!--            android:layout_marginBottom="60dp"-->
+<!--            android:background="#FFFFFF"-->
+<!--            android:text="Login" />-->
 
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="115dp"
-            android:layout_height="63dp"
-            android:layout_alignTop="@id/editText2"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="79dp"
-            android:layout_marginLeft="79dp"
-            android:layout_marginTop="110dp"
-            android:layout_marginBottom="60dp"
-            android:background="#FFFFFF"
-            android:text="New Account" />
+<!--        <Button-->
+<!--            android:id="@+id/btn2"-->
+<!--            android:layout_width="115dp"-->
+<!--            android:layout_height="63dp"-->
+<!--            android:layout_alignTop="@id/editText2"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginStart="79dp"-->
+<!--            android:layout_marginLeft="79dp"-->
+<!--            android:layout_marginTop="110dp"-->
+<!--            android:layout_marginBottom="60dp"-->
+<!--            android:background="#FFFFFF"-->
+<!--            android:text="New Account" />-->
 
-        <TextView
-            android:id="@+id/title1"
-            android:layout_width="wrap_content"
-            android:layout_height="77dp"
-            android:layout_alignTop="@id/imageView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="85dp"
-            android:layout_marginLeft="85dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="85dp"
-            android:layout_marginRight="85dp"
-            android:layout_marginBottom="203dp"
-            android:text="Welcome to"
-            android:textColor="#FFFFFF"
-            android:textSize="70sp"
-            android:textStyle="bold"
-            app:fontFamily="cursive" />
+<!--        <TextView-->
+<!--            android:id="@+id/title1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="77dp"-->
+<!--            android:layout_alignTop="@id/imageView"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginStart="85dp"-->
+<!--            android:layout_marginLeft="85dp"-->
+<!--            android:layout_marginTop="35dp"-->
+<!--            android:layout_marginEnd="85dp"-->
+<!--            android:layout_marginRight="85dp"-->
+<!--            android:layout_marginBottom="203dp"-->
+<!--            android:text="Welcome to"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:textSize="70sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:fontFamily="cursive" />-->
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="199dp"
-            android:layout_height="187dp"
-            android:layout_alignBottom="@id/loginTitle"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="99dp"
-            android:layout_marginLeft="99dp"
-            android:layout_marginTop="116dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginBottom="78dp"
-            app:srcCompat="@drawable/logo_part_transparent" />
-    </RelativeLayout>
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView"-->
+<!--            android:layout_width="199dp"-->
+<!--            android:layout_height="187dp"-->
+<!--            android:layout_alignBottom="@id/loginTitle"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginStart="99dp"-->
+<!--            android:layout_marginLeft="99dp"-->
+<!--            android:layout_marginTop="116dp"-->
+<!--            android:layout_marginEnd="100dp"-->
+<!--            android:layout_marginRight="100dp"-->
+<!--            android:layout_marginBottom="78dp"-->
+<!--            app:srcCompat="@drawable/logo_part_transparent" />-->
+<!--    </RelativeLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
